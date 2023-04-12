@@ -18,25 +18,25 @@ $mat-light-primary-palette: mat.define-palette(
     $light-primary-palette, 900, 700, 900, 50
 );
 $mat-light-green-palette: mat.define-palette(
-    $light-green-palette
+    $light-green-palette, 400
 );
 $mat-light-yellow-palette: mat.define-palette(
-    $light-yellow-palette
+    $light-yellow-palette, 300
 );
 $mat-light-orange-palette: mat.define-palette(
-    $light-orange-palette
+    $light-orange-palette, 200
 );
 $mat-light-red-palette: mat.define-palette(
-    $light-red-palette
+    $light-red-palette, 300
 );
 $mat-light-blue-palette: mat.define-palette(
-    $light-blue-palette
+    $light-blue-palette, 300
 );
 $mat-light-violet-palette: mat.define-palette(
-    $light-violet-palette
+    $light-violet-palette, 300
 );
 $mat-light-pink-palette: mat.define-palette(
-    $light-pink-palette
+    $light-pink-palette, 300
 );
 
 //Dark mode material palettes
@@ -75,7 +75,7 @@ $default-theme: mat.define-dark-theme((color: (
 )));
 
 
-$light-green-theme: mat.define-light-theme(
+$light-green-theme: mat.define-dark-theme(
     (
       color: (
         primary: $mat-light-green-palette,

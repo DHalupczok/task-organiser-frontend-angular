@@ -1,0 +1,404 @@
+//Light mode colors
+
+$light-primary-palette: (
+  50: #ffffff, //primordial
+  100: #fafafa,
+  200: #f5f5f5,
+  300: #f0f0f0,
+  400: #dedede,
+  500: #c2c2c2,
+  600: #979797,
+  700: #818181,
+  800: #606060,
+  900: #3c3c3c,
+  contrast: (
+    50: #ffffff, //primordial
+    100: #fafafa,
+    200: #f5f5f5,
+    300: #f0f0f0,
+    400: #dedede,
+    500: #c2c2c2,
+    600: #979797,
+    700: #818181,
+    800: #606060,
+    900: #3c3c3c,
+  )
+);
+
+$light-green-palette: (
+  50: #f2feeb,
+  100: #defdce,
+  200: #c7fbae,
+  300: #aef98a,
+  400: #97f56b, //primordial
+  500: #65d133,
+  600: #70e044,
+  700: #57ca38,
+  800: #3db52e,
+  900: #00911e,
+  contrast: (
+    50: #f6e6fd,
+    100: #e8c1fa,
+    200: #d997f8,
+    300: #c96bf5, //primordial
+    400: #bc45f2,
+    500: #ad22e8,
+    600: #9b22e2,
+    700: #8320da,
+    800: #6c1fd2,
+    900: #3b1ec4,
+  )
+);
+
+$light-yellow-palette: (
+  50: #fdfde5,
+  100: #fbf8c0,
+  200: #f8f396,
+  300: #f5ee6b, //primordial
+  400: #f2ea47,
+  500: #efe51f,
+  600: #f1d41b,
+  700: #f1bc0d,
+  800: #f0a400,
+  900: #ed7a00,
+  contrast: (
+    50: #ebecfe,
+    100: #cdcefc,
+    200: #aaaffa,
+    300: #868ef8,
+    400: #6b72f5, //primordial
+    500: #5256f0,
+    600: #4c4ce4,
+    700: #4341d7,
+    800: #3b34cc,
+    900: #321db4,
+  )
+);
+
+$light-orange-palette: (
+  50: #fce6df,
+  100: #fbc8a6,
+  200: #f5a56b, //primordial
+  300: #eb842d,
+  400: #e36e00,
+  500: #db5a00,
+  600: #d15400,
+  700: #c54d00,
+  800: #b84500,
+  900: #a23700,
+  contrast: (
+    50: #e4f3fd,
+    100: #bde1fa,
+    200: #94cff8,
+    300: #6bbcf5, //primordial
+    400: #4badf4,
+    500: #2a9ff4,
+    600: #2391e6,
+    700: #1a7fd3,
+    800: #1a7fd3,
+    900: #0050a4,
+  )
+);
+
+$light-red-palette: (
+  50: #ffeaee,
+  100: #ffcbd0,
+  200: #fb9695,
+  300: #f56b6b, //primordial
+  400: #ff4444,
+  500: #ff3025,
+  600: #f52227,
+  700: #e21221,
+  800: #d5031a,
+  900: #c5000b,
+  contrast: (
+    50: #defdfc,
+    100: #acf9f7,
+    200: #6bf5f5, //primordial
+    300: #00eef2,
+    400: #00e8ee,
+    500: #00e2ee,
+    600: #00d0da,
+    700: #00b9bf,
+    800: #00a4a6,
+    900: #007f78,
+  )
+);
+
+$light-blue-palette: (
+  50: #e3f5fe,
+  100: #bae6fc,
+  200: #8fd5f9,
+  300: #6bc5f5, //primordial
+  400: #58b8f2,
+  500: #4cacf0,
+  600: #489ee1,
+  700: #418acd,
+  800: #3b7ab9,
+  900: #305a96,
+  contrast: (
+    50: #f9ebe8,
+    100: #fad2bf,
+    200: #f7b696,
+    300: #f59b6b, //primordial
+    400: #f38749,
+    500: #f37524,
+    600: #e96f21,
+    700: #db671c,
+    800: #ce6019,
+    900: #b65212,
+  )
+);
+
+$light-violet-palette: (
+  50: #f3e6fd,
+  100: #ddc2fa,
+  200: #c799f7,
+  300: #b06bf5, //primordial
+  400: #9d43f2,
+  500: #8813e6,
+  600: #7e08df,
+  700: #6e00d6,
+  800: #6000cf,
+  900: #4a00c0,
+  contrast: (
+    50: #f3fee7,
+    100: #e0fbc3,
+    200: #c9f89a,
+    300: #b0f56b, //primordial
+    400: #99f13e,
+    500: #89ec11,
+    600: #77da00,
+    700: #5ec500,
+    800: #46b000,
+    900: #018c00,
+  )
+);
+
+$light-pink-palette: (
+  50: #fbe6f6,
+  100: #f5c0e8,
+  200: #f497d8,
+  300: #f56bc7, //primordial
+  400: #f845b6,
+  500: #fc19a2,
+  600: #e81b9c,
+  700: #d01d93,
+  800: #b81e8c,
+  900: #8e1f7f,
+  contrast: (
+    50: #e7fdee,
+    100: #c6fad4,
+    200: #9ef8b9,
+    300: #6bf599, //primordial
+    400: #2ff07e,
+    500: #00e969,
+    600: #00d85e,
+    700: #00c350,
+    800: #00b145,
+    900: #008f30,
+  )
+);
+
+//Dark mode colors
+
+$dark-primary-palette: (
+  50: #f7f7f7,
+  100: #f7f7f7,
+  200: #f2f2f2,
+  300: #ececec,
+  400: #cacaca,
+  500: #adadad,
+  600: #838383,
+  700: #6e6e6e,
+  800: #4e4e4e,
+  900: #2c2c2c, //primordial
+  contrast: (
+    50: #f7f7f7,
+    100: #f7f7f7,
+    200: #f2f2f2,
+    300: #ececec,
+    400: #cacaca,
+    500: #adadad,
+    600: #838383,
+    700: #6e6e6e,
+    800: #4e4e4e,
+    900: #2c2c2c,
+  )
+);
+
+$dark-green-palette: (
+  50: #eefae8,
+  100: #d4f2c5,
+  200: #b8e9a0,
+  300: #99e077,
+  400: #7fd956,
+  500: #65d133, //primordial
+  600: #55c02b,
+  700: #3cac20,
+  800: #1f9815,
+  900: #007500,
+  contrast: (
+    50: #f4e6f9,
+    100: #e2c2f1,
+    200: #d099ea,
+    300: #bc70e1,
+    400: #ae50d9,
+    500: #9f33d1,
+    600: #8f30ca,
+    700: #792cc2,
+    800: #6528ba,
+    900: #3b22ae,
+  )
+);
+
+$dark-yellow-palette: (
+  50: #fcfbe7,
+  100: #f7f4c3,
+  200: #f1ef9c,
+  300: #eae875,
+  400: #e4e257,
+  500: #dfde38,
+  600: #d1cc33, //primordial
+  700: #bfb62c,
+  800: #ac9f26,
+  900: #8e791a,
+  contrast: (
+    50: #ece7fa,
+    100: #cdc4f2,
+    200: #aa9eeb,
+    300: #8676e4,
+    400: #6759de,
+    500: #423dd7,
+    600: #3338d1,
+    700: #1331c8,
+    800: #002bc1,
+    900: #0020b6,
+  )
+);
+
+$dark-orange-palette: (
+  50: #fcf2e3,
+  100: #f7ddb9,
+  200: #f3c68d,
+  300: #eeb064,
+  400: #eaa04b,
+  500: #e6923e,
+  600: #e1883a,
+  700: #d97a36,
+  800: #d16d33, //primordial
+  900: #c35930,
+  contrast: (
+    50: #e2f4fb,
+    100: #b5e3f6,
+    200: #87d1ef,
+    300: #5fbfe8,
+    400: #47b2e4,
+    500: #38a5df,
+    600: #3397d1,
+    700: #2c84be,
+    800: #2974a9,
+    900: #1f5487,
+  )
+);
+
+$dark-red-palette: (
+  50: #feebee,
+  100: #feced3,
+  200: #ed9b9c,
+  300: #e37575,
+  400: #ed5553,
+  500: #f2463a,
+  600: #e33d39,
+  700: #d13333, //primordial
+  800: #c42c2c,
+  900: #b52221,
+  contrast: (
+    50: #def7f6,
+    100: #aeece9,
+    200: #77dfdc,
+    300: #33d1d1,
+    400: #00c7ca,
+    500: #00bdc5,
+    600: #00adb3,
+    700: #00989a,
+    800: #008383,
+    900: #006059,
+  )
+);
+
+$dark-blue-palette: (
+  50: #e1f4f9,
+  100: #b4e2f0,
+  200: #86cfe6,
+  300: #5ebddc,
+  400: #45afd6,
+  500: #33a2d1, //primordial
+  600: #2c94c3,
+  700: #2482b1,
+  800: #21719d,
+  900: #17527b,
+  contrast: (
+    50: #fdf3e4,
+    100: #fbe0bc,
+    200: #f9cd91,
+    300: #f7b968,
+    400: #f5aa4f,
+    500: #f39d42,
+    600: #ee923e,
+    700: #e6843a,
+    800: #de7737,
+    900: #d16233,
+  )
+);
+
+$dark-violet-palette: (
+  50: #f1e8f9,
+  100: #dac6f1,
+  200: #c19fe9,
+  300: #a976e0,
+  400: #9555d9,
+  500: #8233d1, //primordial
+  600: #782dcb,
+  700: #6b24c2,
+  800: #5e1dbb,
+  900: #4a07b0,
+  contrast: (
+    50: #f1fae8,
+    100: #dbf2c5,
+    200: #c4e9a0,
+    300: #abe077,
+    400: #96d856,
+    500: #82d133,
+    600: #72c02b,
+    700: #5cac20,
+    800: #469815,
+    900: #117600,
+  )
+);
+
+$dark-pink-palette: (
+  50: #fae5f2,
+  100: #f1bcde,
+  200: #e78fc9,
+  300: #db5fb4,
+  400: #d133a4, //primordial
+  500: #c50096,
+  600: #b80092,
+  700: #a6008c,
+  800: #970086,
+  900: #7a007b,
+  contrast: (
+    50: #e5f9e9,
+    100: #c2efc8,
+    200: #98e4a5,
+    300: #66da7e,
+    400: #33d160,
+    500: #00c73f,
+    600: #00b735,
+    700: #00a428,
+    800: #00931a,
+    900: #007300,
+  )
+);
+

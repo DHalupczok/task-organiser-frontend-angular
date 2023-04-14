@@ -1,5 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-
+@import "variables";
 html,
 body {
   height: 100%;
@@ -7,4 +7,28 @@ body {
 body {
   margin: 0;
   font-family: Roboto, 'Helvetica Neue', sans-serif;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-start {
+  text-align: start;
+}
+
+.text-end {
+  text-align: end;
+}
+
+@each $name, $size in $font-sizes {
+  .text-#{$name} {
+    font-size: $size !important;
+  }
+}
+
+@each $name, $weight in $font-weights {
+  .text-#{$name} {
+    font-weight: $weight !important;
+  }
 }

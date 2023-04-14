@@ -6,6 +6,7 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { ExampleComponent } from './components/example/example.component';
+import { TileComponent } from './components/shared/tile/tile.component';
 
 @Component({
   standalone: true,
@@ -20,6 +21,7 @@ import { ExampleComponent } from './components/example/example.component';
     MatIconModule,
     MatButtonModule,
     ExampleComponent,
+    TileComponent,
   ],
 })
 export class AppComponent {

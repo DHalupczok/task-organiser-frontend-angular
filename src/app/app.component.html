@@ -1,1 +1,21 @@
 <app-example></app-example>
+<div style="display: flex; justify-content: center">
+  <app-tile
+    style="margin-left: 2rem; margin-right: 2rem"
+    [mainContentText]="'Nothing will work \n unless you do.'"
+    mainContentClassList="text-center"
+    signatureText="Maya Angelou"
+    signatureClassList="text-end text-xs"></app-tile>
+  <app-tile
+    style="margin-left: 2rem; margin-right: 2rem"
+    mainContentText="3"
+    mainContentClassList="text-5xl text-bold text-center"
+    subContentText="To do"
+    subContentClassList="text-center"></app-tile>
+  <app-tile
+    style="margin-left: 2rem; margin-right: 2rem"
+    mainContentText="Make corrections"
+    mainContentClassList="text-4xl text-start"
+    subContentText="on index page"
+    subContentClassList="text-2xl text-start"></app-tile>
+</div>

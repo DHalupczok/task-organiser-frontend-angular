@@ -1,0 +1,20 @@
+<div class="tile">
+  <div
+    *ngIf="mainContentText"
+    [ngClass]="mainContentClassList"
+    class="tile-main__content">
+    {{ mainContentText }}
+  </div>
+  <div
+    *ngIf="subContentText"
+    [ngClass]="subContentClassList"
+    class="tile-sub__content">
+    {{ subContentText }}
+  </div>
+  <div
+    *ngIf="signatureText"
+    [ngClass]="signatureClassList"
+    class="tile-signature__content">
+    {{ signatureText }}
+  </div>
+</div>

@@ -402,3 +402,32 @@ $dark-pink-palette: (
   )
 );
 
+$font-sizes: (
+  '3xs': 0.62rem,
+  // 10px
+  '2xs': 0.68rem,
+  // 11px
+  'xs': 0.75rem,
+  // 12px
+  'sm': 0.81rem,
+  // 13px
+  'normal': 0.87rem,
+  // 14px
+  'xl': 0.93rem,
+  // 15px
+  '2xl': 1rem,
+  // 16px
+  '3xl': 1.25rem,
+  //20px
+  '4xl': 1.37rem,
+  // 22px
+  '5xl': 1.87rem,
+  // 30px
+);
+
+$font-weights: (
+  'light': 300,
+  'medium': 400,
+  'bolder': 500,
+  'bold': 700,
+);

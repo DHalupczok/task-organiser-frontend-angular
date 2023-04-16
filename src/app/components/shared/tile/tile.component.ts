@@ -6,7 +6,7 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './tile.component.html',
-  styleUrls: ['./tile.component.scss'],
+  styleUrls: ['./tile.component.scss', './_tile-theme.component.scss'],
 })
 export class TileComponent {
   @Input() mainContentText = '';

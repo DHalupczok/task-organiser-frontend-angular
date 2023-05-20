@@ -1,24 +1,51 @@
-<app-example></app-example>
-<div style="display: flex; justify-content: center">
-  <app-tile
-    class="pink-theme"
-    style="margin-left: 2rem; margin-right: 2rem"
-    [mainContentText]="'Nothing will work \n unless you do.'"
-    mainContentClassList="text-center"
-    signatureText="Maya Angelou"
-    signatureClassList="text-end text-xs orange-theme"></app-tile>
-  <app-tile
-    class="green-theme"
-    style="margin-left: 2rem; margin-right: 2rem"
-    mainContentText="3"
-    mainContentClassList="text-5xl text-bold text-center"
-    subContentText="To do"
-    subContentClassList="text-center"></app-tile>
-  <app-tile
-    class="violet-theme"
-    style="margin-left: 2rem; margin-right: 2rem"
-    mainContentText="Make corrections"
-    mainContentClassList="text-4xl text-start"
-    subContentText="on index page"
-    subContentClassList="text-2xl text-start"></app-tile>
+<div class="main" [class.dark-mode]="isDarkModeOn">
+  <div class="main__tile"></div>
+  <div class="main__rectangle z-index-2">cokolwiek</div>
+  <mat-icon (click)="toggleDarkMode()" class="main__color-mode-icon"
+    >contrast</mat-icon
+  >
 </div>
+<!--<mat-sidenav-container>-->
+<!--  <mat-sidenav-->
+<!--    [ngClass]="{ 'mat-sidenav-opened': sidebarOpened }"-->
+<!--    mode="side"-->
+<!--    #sidenav-->
+<!--    [opened]="true">-->
+<!--    <ng-container *ngIf="sidebarOpened; else closedSidebar">-->
+<!--      <div class="mat-sidenav__icon">-->
+<!--        <mat-icon (click)="toggleSidebar()">close</mat-icon>-->
+<!--      </div>-->
+<!--      <div *ngFor="let project of projects">{{ project }}</div>-->
+<!--    </ng-container>-->
+<!--    <ng-template #closedSidebar>-->
+<!--      <mat-icon (click)="toggleSidebar()">menu</mat-icon>-->
+<!--    </ng-template>-->
+<!--  </mat-sidenav>-->
+<!--  <mat-sidenav-content>-->
+<!--    mat-button-->
+<!--    <app-example></app-example>-->
+<!--    <div style="display: flex; justify-content: center">-->
+<!--      <app-tile-->
+<!--        class="pink-theme"-->
+<!--        style="margin-left: 2rem; margin-right: 2rem"-->
+<!--        [mainContentText]="'Nothing will work \n unless you do.'"-->
+<!--        mainContentClassList="text-center"-->
+<!--        signatureText="Maya Angelou"-->
+<!--        signatureClassList="text-end text-xs orange-theme"></app-tile>-->
+<!--      <app-tile-->
+<!--        class="green-theme"-->
+<!--        style="margin-left: 2rem; margin-right: 2rem"-->
+<!--        mainContentText="3"-->
+<!--        mainContentClassList="text-5xl text-bold text-center"-->
+<!--        subContentText="To do"-->
+<!--        subContentClassList="text-center"></app-tile>-->
+<!--      <app-tile-->
+<!--        class="violet-theme"-->
+<!--        style="margin-left: 2rem; margin-right: 2rem"-->
+<!--        mainContentText="Make corrections"-->
+<!--        mainContentClassList="text-4xl text-start"-->
+<!--        subContentText="on index page"-->
+<!--        subContentClassList="text-2xl text-start"></app-tile>-->
+<!--    </div>-->
+<!--  </mat-sidenav-content>-->
+<!--</mat-sidenav-container>-->

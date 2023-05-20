@@ -32,3 +32,9 @@ body {
     font-weight: $weight !important;
   }
 }
+
+@for $i from 1 through 10 {
+  .z-index-#{$i} {
+    z-index: $i;
+  }
+}

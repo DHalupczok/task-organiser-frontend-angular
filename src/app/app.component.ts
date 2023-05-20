@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
@@ -7,12 +7,13 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { ExampleComponent } from './components/example/example.component';
 import { TileComponent } from './components/shared/tile/tile.component';
-
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { NgClass, NgForOf, NgIf } from '@angular/common';
 @Component({
   standalone: true,
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
+  styleUrls: ['./app.component.scss', './_app-theme.component.scss'],
   imports: [
     MatSlideToggleModule,
     MatDatepickerModule,
@@ -22,8 +23,30 @@ import { TileComponent } from './components/shared/tile/tile.component';
     MatButtonModule,
     ExampleComponent,
     TileComponent,
+    MatSidenavModule,
+    NgForOf,
+    NgIf,
+    NgClass,
   ],
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+  isDarkModeOn = false;
   title = 'task-organiser-frontend-angular';
+  sidebarOpened = true;
+  projects: string[] = ['Project 1', 'Project 2', 'Project 3'];
+
+  ngOnInit() {
+    this.isDarkModeOn = window.matchMedia(
+      '(prefers-color-scheme: dark)'
+    ).matches;
+  }
+
+  toggleSidebar() {
+    this.sidebarOpened = !this.sidebarOpened;
+  }
+
+  toggleDarkMode() {
+    console.warn('Toggling dark mode');
+    this.isDarkModeOn = !this.isDarkModeOn;
+  }
 }

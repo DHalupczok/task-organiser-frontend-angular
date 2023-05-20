@@ -2,6 +2,7 @@
 // For more information: https://material.angular.io/guide/theming
 @use '@angular/material' as mat;
 @use "./app/components/shared/tile/tile-theme.component" as tile;
+@use "./app/app-theme.component" as app;
 // Plus imports for other components in your app.
 @import "variables";
 // Include the common styles for Angular Material. We include this here so that you only
@@ -69,14 +70,14 @@ $mat-dark-pink-palette: mat.define-palette(
 // The warn palette is optional (defaults to red).
 // Create the theme object. A theme consists of configurations for individual
 // theming systems such as "color" or "typography".
-$default-theme: mat.define-dark-theme((color: (
+$default-theme: mat.define-light-theme((color: (
   primary: $mat-light-primary-palette,
   accent: $mat-light-violet-palette,
   warn: $mat-light-red-palette,
 )));
 
 
-$light-green-theme: mat.define-dark-theme(
+$light-green-theme: mat.define-light-theme(
     (
       color: (
         primary: $mat-light-green-palette,
@@ -142,6 +143,7 @@ $light-pink-theme: mat.define-light-theme(
 
 @include mat.all-component-themes($default-theme);
 @include tile.theme($default-theme);
+@include app.theme($default-theme);
 .green-theme {
   @include mat.all-component-colors($light-green-theme);
   @include tile.color($light-green-theme);
@@ -175,6 +177,7 @@ $light-pink-theme: mat.define-light-theme(
 .pink-theme {
   @include mat.all-component-colors($light-pink-theme);
   @include tile.color($light-pink-theme);
+  @include app.color($light-pink-theme);
 }
 
 // Include theme styles for core and each component used in your app.

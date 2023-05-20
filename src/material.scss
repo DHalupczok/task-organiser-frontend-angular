@@ -141,43 +141,158 @@ $light-pink-theme: mat.define-light-theme(
     )
 );
 
-@include mat.all-component-themes($default-theme);
-@include tile.theme($default-theme);
-@include app.theme($default-theme);
-.green-theme {
-  @include mat.all-component-colors($light-green-theme);
-  @include tile.color($light-green-theme);
+$default-dark-theme: mat.define-dark-theme((color: (
+  primary: $mat-dark-primary-palette,
+  accent: $mat-dark-violet-palette,
+  warn: $mat-dark-red-palette,
+)));
+
+
+$dark-green-theme: mat.define-dark-theme(
+    (
+      color: (
+        primary: $mat-dark-green-palette,
+        accent: $mat-dark-primary-palette,
+        warn: $mat-dark-red-palette
+      ),
+    )
+);
+$dark-yellow-theme: mat.define-dark-theme(
+    (
+      color: (
+        primary: $mat-dark-yellow-palette,
+        accent: $mat-dark-primary-palette,
+        warn: $mat-dark-red-palette,
+      ),
+    )
+);
+
+$dark-orange-theme: mat.define-dark-theme(
+    (
+      color: (
+        primary: $mat-dark-orange-palette,
+        accent: $mat-dark-primary-palette,
+        warn: $mat-dark-red-palette,
+      ),
+    )
+);
+$dark-red-theme: mat.define-dark-theme(
+    (
+      color: (
+        primary: $mat-dark-red-palette,
+        accent: $mat-dark-primary-palette,
+      ),
+    )
+);
+$dark-blue-theme: mat.define-dark-theme(
+    (
+      color: (
+        primary: $mat-dark-blue-palette,
+        accent: $mat-dark-primary-palette,
+        warn: $mat-dark-red-palette,
+      ),
+    )
+);
+$dark-violet-theme: mat.define-dark-theme(
+    (
+      color: (
+        primary: $mat-dark-violet-palette,
+        accent: $mat-dark-primary-palette,
+        warn: $mat-dark-red-palette,
+      ),
+    )
+);
+$dark-pink-theme: mat.define-dark-theme(
+    (
+      color: (
+        primary: $mat-dark-pink-palette,
+        accent: $mat-dark-primary-palette,
+        warn: $mat-dark-red-palette,
+      ),
+    )
+);
+
+.light-mode {
+  @include mat.all-component-themes($default-theme);
+  @include tile.theme($default-theme);
+  @include app.theme($default-theme);
+  .green-theme {
+    @include mat.all-component-colors($light-green-theme);
+    @include tile.color($light-green-theme);
+  }
+
+  .yellow-theme {
+    @include mat.all-component-colors($light-yellow-theme);
+    @include tile.color($light-yellow-theme);
+  }
+
+  .orange-theme {
+    @include mat.all-component-colors($light-orange-theme);
+    @include tile.color($light-orange-theme);
+  }
+
+  .red-theme {
+    @include mat.all-component-colors($light-red-theme);
+    @include tile.color($light-red-theme);
+  }
+
+  .blue-theme {
+    @include mat.all-component-colors($light-blue-theme);
+    @include tile.color($light-blue-theme);
+  }
+
+  .violet-theme {
+    @include mat.all-component-colors($light-violet-theme);
+    @include tile.color($light-violet-theme);
+  }
+
+  .pink-theme {
+    @include mat.all-component-colors($light-pink-theme);
+    @include tile.color($light-pink-theme);
+    @include app.color($light-pink-theme);
+  }
 }
 
-.yellow-theme {
-  @include mat.all-component-colors($light-yellow-theme);
-  @include tile.color($light-yellow-theme);
-}
 
-.orange-theme {
-  @include mat.all-component-colors($light-orange-theme);
-  @include tile.color($light-orange-theme);
-}
+.dark-mode {
+  @include mat.all-component-themes($default-dark-theme);
+  @include tile.theme($default-dark-theme);
+  @include app.theme($default-dark-theme);
+  .green-theme {
+    @include mat.all-component-colors($light-green-theme);
+    @include tile.color($light-green-theme);
+  }
 
-.red-theme {
-  @include mat.all-component-colors($light-red-theme);
-  @include tile.color($light-red-theme);
-}
+  .yellow-theme {
+    @include mat.all-component-colors($light-yellow-theme);
+    @include tile.color($light-yellow-theme);
+  }
 
-.blue-theme {
-  @include mat.all-component-colors($light-blue-theme);
-  @include tile.color($light-blue-theme);
-}
+  .orange-theme {
+    @include mat.all-component-colors($light-orange-theme);
+    @include tile.color($light-orange-theme);
+  }
 
-.violet-theme {
-  @include mat.all-component-colors($light-violet-theme);
-  @include tile.color($light-violet-theme);
-}
+  .red-theme {
+    @include mat.all-component-colors($light-red-theme);
+    @include tile.color($light-red-theme);
+  }
 
-.pink-theme {
-  @include mat.all-component-colors($light-pink-theme);
-  @include tile.color($light-pink-theme);
-  @include app.color($light-pink-theme);
+  .blue-theme {
+    @include mat.all-component-colors($light-blue-theme);
+    @include tile.color($light-blue-theme);
+  }
+
+  .violet-theme {
+    @include mat.all-component-colors($light-violet-theme);
+    @include tile.color($light-violet-theme);
+  }
+
+  .pink-theme {
+    @include mat.all-component-colors($light-pink-theme);
+    @include tile.color($light-pink-theme);
+    @include app.color($light-pink-theme);
+  }
 }
 
 // Include theme styles for core and each component used in your app.

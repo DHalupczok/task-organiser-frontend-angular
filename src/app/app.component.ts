@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostBinding, OnInit } from '@angular/core';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
@@ -30,6 +30,10 @@ import { NgClass, NgForOf, NgIf } from '@angular/common';
   ],
 })
 export class AppComponent implements OnInit {
+  @HostBinding('class')
+  get colorMode() {
+    return this.isDarkModeOn ? 'dark-mode' : 'light-mode';
+  }
   isDarkModeOn = false;
   title = 'task-organiser-frontend-angular';
   sidebarOpened = true;

@@ -32,7 +32,7 @@ import { NgClass, NgForOf, NgIf } from '@angular/common';
 export class AppComponent implements OnInit {
   @HostBinding('class')
   get colorMode() {
-    return this.isDarkModeOn ? 'dark-mode' : 'light-mode';
+    return this.isDarkModeOn ? 'dark-mode' : '';
   }
   isDarkModeOn = false;
   title = 'task-organiser-frontend-angular';

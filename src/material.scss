@@ -17,7 +17,7 @@
 
 //Light mode material palettes
 $mat-light-primary-palette: mat.define-palette(
-    $light-primary-palette, 900, 700, 900, 50
+    $light-primary-palette, 400, 200, 600, 50
 );
 $mat-light-green-palette: mat.define-palette(
     $light-green-palette, 400
@@ -44,7 +44,7 @@ $mat-light-pink-palette: mat.define-palette(
 //Dark mode material palettes
 
 $mat-dark-primary-palette: mat.define-palette(
-    $dark-primary-palette, 900, 700, 900, 50
+    $dark-primary-palette, 700, 900, 900, 200
 );
 $mat-dark-green-palette: mat.define-palette(
     $dark-green-palette
@@ -212,7 +212,7 @@ $dark-pink-theme: mat.define-dark-theme(
     )
 );
 
-.light-mode {
+
   @include mat.all-component-themes($default-theme);
   @include tile.theme($default-theme);
   @include app.theme($default-theme);
@@ -251,47 +251,47 @@ $dark-pink-theme: mat.define-dark-theme(
     @include tile.color($light-pink-theme);
     @include app.color($light-pink-theme);
   }
-}
+
 
 
 .dark-mode {
-  @include mat.all-component-themes($default-dark-theme);
-  @include tile.theme($default-dark-theme);
-  @include app.theme($default-dark-theme);
+  @include mat.all-component-colors($default-dark-theme);
+  @include tile.color($default-dark-theme);
+  @include app.color($default-dark-theme);
   .green-theme {
-    @include mat.all-component-colors($light-green-theme);
-    @include tile.color($light-green-theme);
+    @include mat.all-component-colors($dark-green-theme);
+    @include tile.color($dark-green-theme);
   }
 
   .yellow-theme {
-    @include mat.all-component-colors($light-yellow-theme);
-    @include tile.color($light-yellow-theme);
+    @include mat.all-component-colors($dark-yellow-theme);
+    @include tile.color($dark-yellow-theme);
   }
 
   .orange-theme {
-    @include mat.all-component-colors($light-orange-theme);
-    @include tile.color($light-orange-theme);
+    @include mat.all-component-colors($dark-orange-theme);
+    @include tile.color($dark-orange-theme);
   }
 
   .red-theme {
-    @include mat.all-component-colors($light-red-theme);
-    @include tile.color($light-red-theme);
+    @include mat.all-component-colors($dark-red-theme);
+    @include tile.color($dark-red-theme);
   }
 
   .blue-theme {
-    @include mat.all-component-colors($light-blue-theme);
-    @include tile.color($light-blue-theme);
+    @include mat.all-component-colors($dark-blue-theme);
+    @include tile.color($dark-blue-theme);
   }
 
   .violet-theme {
-    @include mat.all-component-colors($light-violet-theme);
-    @include tile.color($light-violet-theme);
+    @include mat.all-component-colors($dark-violet-theme);
+    @include tile.color($dark-violet-theme);
   }
 
   .pink-theme {
-    @include mat.all-component-colors($light-pink-theme);
-    @include tile.color($light-pink-theme);
-    @include app.color($light-pink-theme);
+    @include mat.all-component-colors($dark-pink-theme);
+    @include tile.color($dark-pink-theme);
+    @include app.color($dark-pink-theme);
   }
 }
 

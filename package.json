@@ -21,6 +21,7 @@
     "@angular/platform-browser": "^16.0.3",
     "@angular/platform-browser-dynamic": "^16.0.3",
     "@angular/router": "^16.0.3",
+    "@ngrx/store": "^16.0.0",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.13.0"
@@ -48,6 +49,7 @@
     "karma-jasmine-html-reporter": "~2.0.0",
     "prettier": "^2.8.7",
     "prettier-eslint": "^15.0.1",
-    "typescript": "~5.0.4"
+    "typescript": "~5.0.4",
+    "@ngrx/eslint-plugin": "^16.0.0"
   }
 }

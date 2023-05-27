@@ -1,6 +1,7 @@
 import { Component, HostBinding, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
+import { DarkModeService } from '../../services/dark-mode.service';
 
 @Component({
   selector: 'app-main-page',
@@ -9,28 +10,17 @@ import { MatIconModule } from '@angular/material/icon';
   templateUrl: './main-page.component.html',
   styleUrls: ['./main-page.component.scss'],
 })
-export class MainPageComponent implements OnInit {
-  @HostBinding('class')
-  get colorMode() {
-    return this.isDarkModeOn ? 'dark-mode' : '';
-  }
-  isDarkModeOn = false;
+export class MainPageComponent {
   title = 'task-organiser-frontend-angular';
   sidebarOpened = true;
   projects: string[] = ['Project 1', 'Project 2', 'Project 3'];
-
-  ngOnInit() {
-    this.isDarkModeOn = window.matchMedia(
-      '(prefers-color-scheme: dark)'
-    ).matches;
-  }
-
+  constructor(private darkModeService: DarkModeService) {}
   toggleSidebar() {
     this.sidebarOpened = !this.sidebarOpened;
   }
 
   toggleDarkMode() {
     console.warn('Toggling dark mode');
-    this.isDarkModeOn = !this.isDarkModeOn;
+    this.darkModeService.toggleDarkMode$.next();
   }
 }

@@ -1,4 +1,4 @@
-import { Component, HostBinding, OnInit } from '@angular/core';
+import { Component, HostBinding, OnDestroy, OnInit } from '@angular/core';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
@@ -10,6 +10,8 @@ import { TileComponent } from './components/shared/tile/tile.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { NgClass, NgForOf, NgIf } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
+import { DarkModeService } from './services/dark-mode.service';
+import { Subscription } from 'rxjs';
 @Component({
   standalone: true,
   selector: 'app-root',
@@ -31,4 +33,23 @@ import { RouterOutlet } from '@angular/router';
     RouterOutlet,
   ],
 })
-export class AppComponent {}
+export class AppComponent implements OnInit, OnDestroy {
+  @HostBinding('class')
+  get colorMode() {
+    return this.isDarkModeOn ? 'dark-mode' : '';
+  }
+  isDarkModeOn = false;
+  darkModeSub: Subscription | null = null;
+  constructor(private darkModeService: DarkModeService) {}
+  ngOnInit() {
+    this.isDarkModeOn = window.matchMedia(
+      '(prefers-color-scheme: dark)'
+    ).matches;
+    this.darkModeSub = this.darkModeService.toggleDarkMode$.subscribe(
+      () => (this.isDarkModeOn = !this.isDarkModeOn)
+    );
+  }
+  ngOnDestroy() {
+    this.darkModeSub?.unsubscribe();
+  }
+}

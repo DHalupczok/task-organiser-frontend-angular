@@ -3,6 +3,7 @@
 @use '@angular/material' as mat;
 @use "./app/components/shared/tile/tile-theme.component" as tile;
 @use "./app/pages/main-page/main-page-theme.component" as main-page;
+@use "./app/components/sidebar/sidebar-theme.component" as sidebar;
 // Plus imports for other components in your app.
 @import "variables";
 // Include the common styles for Angular Material. We include this here so that you only
@@ -35,7 +36,7 @@ $mat-light-blue-palette: mat.define-palette(
     $light-blue-palette, 300
 );
 $mat-light-violet-palette: mat.define-palette(
-    $light-violet-palette, 300
+    $light-violet-palette, 300, 100, 400, 50
 );
 $mat-light-pink-palette: mat.define-palette(
     $light-pink-palette, 300
@@ -62,7 +63,7 @@ $mat-dark-blue-palette: mat.define-palette(
     $dark-blue-palette
 );
 $mat-dark-violet-palette: mat.define-palette(
-    $dark-violet-palette
+    $dark-violet-palette, 500, 500, 100, 50
 );
 $mat-dark-pink-palette: mat.define-palette(
     $dark-pink-palette
@@ -244,6 +245,7 @@ $dark-pink-theme: mat.define-dark-theme(
   .violet-theme {
     @include mat.all-component-colors($light-violet-theme);
     @include tile.color($light-violet-theme);
+    @include sidebar.color($light-violet-theme);
   }
 
   .pink-theme {
@@ -286,6 +288,7 @@ $dark-pink-theme: mat.define-dark-theme(
   .violet-theme {
     @include mat.all-component-colors($dark-violet-theme);
     @include tile.color($dark-violet-theme);
+    @include sidebar.color($dark-violet-theme);
   }
 
   .pink-theme {

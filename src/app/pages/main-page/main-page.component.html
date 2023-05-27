@@ -1,7 +1,16 @@
 <div class="main">
-  <div class="main__tile"></div>
-  <div class="main__rectangle z-index-2"></div>
-  <mat-icon (click)="toggleDarkMode()" class="main__color-mode-icon"
-    >contrast</mat-icon
-  >
+  <app-sidebar
+    [projects]="[
+      { id: '1', name: 'Project 1' },
+      { id: '2', name: 'Project 2' },
+      { id: '3', name: 'Work project as scrum master' },
+      { id: '4', name: 'Work project App 1' }
+    ]"></app-sidebar>
+  <div class="main__content">
+    <div class="main__tile"></div>
+    <div class="main__rectangle z-index-2"></div>
+    <mat-icon (click)="toggleDarkMode()" class="main__color-mode-icon"
+      >contrast</mat-icon
+    >
+  </div>
 </div>

@@ -1,0 +1,28 @@
+<div class="sidebar" [class.sidebar--open]="isOpen">
+  <mat-icon
+    *ngIf="!isOpen; else openedSidebar"
+    (click)="toggleSidebar()"
+    class="sidebar__icon"
+    >menu</mat-icon
+  >
+</div>
+
+<ng-template #openedSidebar>
+  <div class="sidebar__opened">
+    <div (click)="toggleSidebar()" class="sidebar__close-button">
+      <mat-icon>close</mat-icon>
+    </div>
+    <div class="sidebar__projects">
+      <div
+        class="sidebar__element"
+        *ngFor="let project of projects; trackBy: trackById">
+        <mat-icon>folder</mat-icon>
+        <div>{{ project.name }}</div>
+      </div>
+    </div>
+    <div class="sidebar__element">
+      <mat-icon>calendar_month</mat-icon>
+      <div>Calendar</div>
+    </div>
+  </div>
+</ng-template>

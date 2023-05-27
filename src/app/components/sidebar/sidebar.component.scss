@@ -1,0 +1,46 @@
+.sidebar {
+  background-color: deeppink;
+  width: 85px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+
+  .sidebar__icon {
+    transform: scale(1.45);
+    margin-top: 1rem;
+  }
+
+  &.sidebar--open {
+    position: absolute;
+    width: 25vw;
+
+    .sidebar__opened {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      font-size: 1.5rem;
+      .sidebar__close-button {
+        display: flex;
+        flex-direction: row;
+        justify-content: end;
+        margin-top: 1rem;
+        margin-right: 1rem;
+      }
+      .sidebar__projects {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+    .sidebar__element {
+      display: flex;
+      flex-direction: row;
+      justify-content: start;
+      padding-left: 2rem;
+      mat-icon {
+        margin-right: 1rem;
+        height: 100%;
+      }
+    }
+
+  }
+}

@@ -9,6 +9,7 @@ import { ExampleComponent } from './components/example/example.component';
 import { TileComponent } from './components/shared/tile/tile.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { NgClass, NgForOf, NgIf } from '@angular/common';
+import { RouterOutlet } from '@angular/router';
 @Component({
   standalone: true,
   selector: 'app-root',
@@ -27,30 +28,7 @@ import { NgClass, NgForOf, NgIf } from '@angular/common';
     NgForOf,
     NgIf,
     NgClass,
+    RouterOutlet,
   ],
 })
-export class AppComponent implements OnInit {
-  @HostBinding('class')
-  get colorMode() {
-    return this.isDarkModeOn ? 'dark-mode' : '';
-  }
-  isDarkModeOn = false;
-  title = 'task-organiser-frontend-angular';
-  sidebarOpened = true;
-  projects: string[] = ['Project 1', 'Project 2', 'Project 3'];
-
-  ngOnInit() {
-    this.isDarkModeOn = window.matchMedia(
-      '(prefers-color-scheme: dark)'
-    ).matches;
-  }
-
-  toggleSidebar() {
-    this.sidebarOpened = !this.sidebarOpened;
-  }
-
-  toggleDarkMode() {
-    console.warn('Toggling dark mode');
-    this.isDarkModeOn = !this.isDarkModeOn;
-  }
-}
+export class AppComponent {}

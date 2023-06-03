@@ -17,7 +17,6 @@ export class SidebarComponent {
   trackById = this.utilsService.trackById;
   constructor(private utilsService: UtilsService) {}
   toggleSidebar() {
-    console.warn('Toggling sidebar');
     this.isOpen = !this.isOpen;
   }
 }

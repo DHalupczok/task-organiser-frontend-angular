@@ -21,6 +21,10 @@ body {
   text-align: end;
 }
 
+.cursor-pointer {
+  cursor: pointer;
+}
+
 @each $name, $size in $font-sizes {
   .text-#{$name} {
     font-size: $size !important;

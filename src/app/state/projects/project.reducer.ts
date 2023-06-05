@@ -1,12 +1,11 @@
 import { IProject } from '../../interface';
 import { createReducer, on } from '@ngrx/store';
 import {
-  createNewProjectSuccess,
   deleteProjectSuccess,
-  editExistingProjectSuccess,
   fetchAllProjects,
   fetchAllProjectsSuccess,
   projectsApiFailure,
+  selectProject,
 } from './project.actions';
 
 export interface ProjectState {
@@ -23,33 +22,40 @@ export const initialState: ProjectState = {
 
 export const projectReducer = createReducer(
   initialState,
-  on(fetchAllProjects, state => ({ ...state, status: 'loading' })),
-  on(fetchAllProjectsSuccess, (state, { projects }) => ({
-    ...state,
-    projects,
-    error: '',
-    status: 'success',
-  })),
-  on(projectsApiFailure, (state, { error }) => ({
-    ...state,
-    projects: [],
-    error,
-    status: 'error',
-  })),
-  on(createNewProjectSuccess, (state, { project }) => ({
-    ...state,
-    projects: [...state.projects, project],
-  })),
-  on(editExistingProjectSuccess, (state, { project }) => {
-    const newProjects = state.projects.slice();
-    const existingProjectIndex = newProjects.findIndex(
-      existingProject => existingProject.id === project.id
-    );
-    newProjects[existingProjectIndex] = project;
-    return { ...state, projects: newProjects };
-  }),
-  on(deleteProjectSuccess, (state, { id }) => ({
-    ...state,
-    projects: state.projects.filter(project => project.id !== id),
-  }))
+  on(
+    fetchAllProjects,
+    (state): ProjectState => ({ ...state, status: 'loading' })
+  ),
+  on(
+    fetchAllProjectsSuccess,
+    (state, { projects }): ProjectState => ({
+      ...state,
+      projects,
+      error: '',
+      status: 'success',
+    })
+  ),
+  on(
+    selectProject,
+    (state, { id }): ProjectState => ({
+      ...state,
+      projects: state.projects.map(el => ({ ...el, isSelected: el.id === id })),
+    })
+  ),
+  on(
+    projectsApiFailure,
+    (state, { error }): ProjectState => ({
+      ...state,
+      projects: [],
+      error,
+      status: 'error',
+    })
+  ),
+  on(
+    deleteProjectSuccess,
+    (state, { id }): ProjectState => ({
+      ...state,
+      projects: state.projects.filter(project => project.id !== id),
+    })
+  )
 );

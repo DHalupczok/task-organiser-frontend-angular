@@ -14,13 +14,15 @@
     </div>
     <div class="sidebar__projects">
       <div
-        class="sidebar__element"
+        (click)="selectProject(project)"
+        class="sidebar__element cursor-pointer"
+        [class.sidebar__element--selected]="project.isSelected"
         *ngFor="let project of projects; trackBy: trackById">
         <mat-icon>folder</mat-icon>
         <div>{{ project.name }}</div>
       </div>
     </div>
-    <div class="sidebar__element">
+    <div class="sidebar__element cursor-pointer">
       <mat-icon>calendar_month</mat-icon>
       <div>Calendar</div>
     </div>

@@ -30,6 +30,10 @@
         mat-icon {
           color: mat.get-color-from-palette($primary-palette, 'darker');
         }
+
+        &.sidebar__element--selected {
+            color: mat.get-color-from-palette($primary-palette, 50);
+        }
       }
 
     }

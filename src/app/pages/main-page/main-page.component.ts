@@ -4,10 +4,11 @@ import { MatIconModule } from '@angular/material/icon';
 import { DarkModeService } from '../../services/dark-mode.service';
 import { SidebarComponent } from '../../components/sidebar/sidebar.component';
 import { Store } from '@ngrx/store';
-import { ProjectState } from '../../state/projects/project.reducer';
 import { selectAllProjects } from '../../state/projects/project.selectors';
-import { tap } from 'rxjs';
-import { fetchAllProjects } from '../../state/projects/project.actions';
+import {
+  selectProject,
+  fetchAllProjects,
+} from '../../state/projects/project.actions';
 import { AppState } from '../../state/app.state';
 
 @Component({

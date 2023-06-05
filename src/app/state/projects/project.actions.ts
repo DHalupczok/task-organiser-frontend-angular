@@ -6,6 +6,10 @@ export const fetchAllProjectsSuccess = createAction(
   '[Project API] Fetch All Projects Success',
   props<{ projects: IProject[] }>()
 );
+export const selectProject = createAction(
+  '[Main page] Select Project',
+  props<{ id: string }>()
+);
 export const projectsApiFailure = createAction(
   '[Project API] Fetch All Projects Failure',
   props<{ error: string }>()
@@ -14,18 +18,11 @@ export const createNewProject = createAction(
   '[Main Page] Create New Project',
   props<{ project: IProject }>()
 );
-export const createNewProjectSuccess = createAction(
-  '[Project API] Create New Project Success',
-  props<{ project: IProject }>()
-);
 export const editExistingProject = createAction(
   '[Main Page] Edit Existing Project',
   props<{ project: IProject }>()
 );
-export const editExistingProjectSuccess = createAction(
-  '[Project API] Edit Existing Project Success',
-  props<{ project: IProject }>()
-);
+
 export const deleteProject = createAction(
   '[Main Page] Delete Project',
   props<{ id: string }>()

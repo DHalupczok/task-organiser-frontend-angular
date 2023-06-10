@@ -1,4 +1,4 @@
-import { IProject } from '../../interface';
+import { IProject, TStatus } from '../../interface';
 import { createReducer, on } from '@ngrx/store';
 import {
   deleteProjectSuccess,
@@ -11,7 +11,7 @@ import {
 export interface ProjectState {
   projects: IProject[];
   error: string;
-  status: 'pending' | 'loading' | 'error' | 'success';
+  status: TStatus;
 }
 
 export const initialState: ProjectState = {

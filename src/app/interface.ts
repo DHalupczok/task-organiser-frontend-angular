@@ -33,3 +33,5 @@ export interface IUser {
   email: string;
   name: string;
 }
+
+export type TStatus = 'pending' | 'loading' | 'error' | 'success';

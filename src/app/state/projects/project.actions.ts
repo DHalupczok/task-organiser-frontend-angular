@@ -11,7 +11,7 @@ export const selectProject = createAction(
   props<{ id: string }>()
 );
 export const projectsApiFailure = createAction(
-  '[Project API] Fetch All Projects Failure',
+  '[Project API] Project API Failure',
   props<{ error: string }>()
 );
 export const createNewProject = createAction(

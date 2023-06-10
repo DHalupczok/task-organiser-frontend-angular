@@ -15,3 +15,7 @@ export const selectProjectsStatus = createSelector(
   selectProjects,
   (state: ProjectState) => state.status
 );
+export const getSelectedProject = createSelector(
+  selectProjects,
+  (state: ProjectState) => state.projects.filter(project => project.isSelected)
+);

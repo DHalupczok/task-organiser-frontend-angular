@@ -9,15 +9,13 @@ import { environment } from '../../../environments/environment.development';
 export class TypesService {
   constructor(private http: HttpClient) {}
   getAll(projectId: string) {
-    return this.http.get<IProject[]>(
-      `${environment.apiURL}/types/${projectId}`
-    );
+    return this.http.get<IType[]>(`${environment.apiURL}/types/${projectId}`);
   }
   createNew(type: IType) {
-    return this.http.post<IType>(`${environment.apiURL}/projects`, type);
+    return this.http.post<IType>(`${environment.apiURL}/types`, type);
   }
   editExisting(type: IType) {
-    return this.http.put<IType>(`${environment.apiURL}/projects`, type);
+    return this.http.put<IType>(`${environment.apiURL}/types`, type);
   }
   delete(id: string) {
     return this.http.delete<void>(`${environment.apiURL}/types/${id}`);

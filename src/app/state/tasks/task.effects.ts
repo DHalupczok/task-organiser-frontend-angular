@@ -8,7 +8,7 @@ import {
   editExistingTask,
   fetchAllTasks,
   fetchAllTasksSuccess,
-  tasksApiFailure,
+  taskApiFailure,
 } from './task.actions';
 import { catchError, map, of, switchMap } from 'rxjs';
 
@@ -20,7 +20,7 @@ export class TaskEffects {
       switchMap(({ projectId }) =>
         this.taskService.getAll(projectId).pipe(
           map(tasks => fetchAllTasksSuccess({ tasks })),
-          catchError(error => of({ type: tasksApiFailure.type, error }))
+          catchError(error => of({ type: taskApiFailure.type, error }))
         )
       )
     );
@@ -31,7 +31,7 @@ export class TaskEffects {
       switchMap(({ task }) =>
         this.taskService.createNew(task).pipe(
           map(tasks => fetchAllTasksSuccess({ tasks })),
-          catchError(error => of({ type: tasksApiFailure.type, error }))
+          catchError(error => of({ type: taskApiFailure.type, error }))
         )
       )
     );

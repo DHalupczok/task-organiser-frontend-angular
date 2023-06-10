@@ -8,11 +8,15 @@ import { MainPageComponent } from './app/pages/main-page/main-page.component';
 import { provideStore } from '@ngrx/store';
 import { provideHttpClient } from '@angular/common/http';
 import { provideEffects } from '@ngrx/effects';
-import { ProjectsEffects } from './app/state/projects/projects.effects';
+import { ProjectEffects } from './app/state/projects/project.effects';
 import { projectReducer } from './app/state/projects/project.reducer';
 import { taskReducer } from './app/state/tasks/task.reducer';
 import { TaskEffects } from './app/state/tasks/task.effects';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
+import { typeReducer } from './app/state/types/type.reducer';
+import * as typeEffects from './app/state/types/type.effects';
+import { userReducer } from './app/state/users/user.reducer';
+import * as userEffects from './app/state/users/user.effects';
 
 bootstrapApplication(AppComponent, {
   providers: [
@@ -21,9 +25,14 @@ bootstrapApplication(AppComponent, {
       { path: '**', redirectTo: '' },
     ]),
     importProvidersFrom([BrowserAnimationsModule]),
-    provideStore({ projects: projectReducer, tasks: taskReducer }),
+    provideStore({
+      projects: projectReducer,
+      tasks: taskReducer,
+      types: typeReducer,
+      users: userReducer,
+    }),
     provideHttpClient(),
-    provideEffects(ProjectsEffects, TaskEffects),
+    provideEffects(ProjectEffects, TaskEffects, typeEffects, userEffects),
     provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() }),
   ],
 });

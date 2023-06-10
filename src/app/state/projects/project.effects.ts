@@ -13,7 +13,7 @@ import {
 import { catchError, map, of, switchMap } from 'rxjs';
 
 @Injectable()
-export class ProjectsEffects {
+export class ProjectEffects {
   fetchAllProjects$ = createEffect(() => {
     return this.actions$.pipe(
       ofType(fetchAllProjects),

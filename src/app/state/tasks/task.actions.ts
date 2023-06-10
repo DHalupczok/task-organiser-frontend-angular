@@ -2,14 +2,14 @@ import { createAction, props } from '@ngrx/store';
 import { ITask } from '../../interface';
 
 export const fetchAllTasks = createAction(
-  '[Main Page] Fetch All Tasks By Project Id',
+  '[Main Page] Fetch All Tasks ',
   props<{ projectId: string }>()
 );
 export const fetchAllTasksSuccess = createAction(
-  '[Task API] Fetch All Tasks By Project Id',
+  '[Task API] Fetch All Tasks Success',
   props<{ tasks: ITask[] }>()
 );
-export const tasksApiFailure = createAction(
+export const taskApiFailure = createAction(
   '[Task API] Task API Failure',
   props<{ error: string }>()
 );

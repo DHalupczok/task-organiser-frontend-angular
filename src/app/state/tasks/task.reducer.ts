@@ -4,7 +4,7 @@ import {
   deleteTaskSuccess,
   fetchAllTasks,
   fetchAllTasksSuccess,
-  tasksApiFailure,
+  taskApiFailure,
 } from './task.actions';
 
 export interface TaskState {
@@ -32,7 +32,7 @@ export const taskReducer = createReducer(
     })
   ),
   on(
-    tasksApiFailure,
+    taskApiFailure,
     (state, { error }): TaskState => ({
       ...state,
       error,

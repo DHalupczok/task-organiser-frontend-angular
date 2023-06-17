@@ -3,6 +3,7 @@
 @use '@angular/material' as mat;
 @use "./app/components/shared/tile/tile-theme.component" as tile;
 @use "./app/pages/main-page/main-page-theme.component" as main-page;
+@use "./app/pages/login-page/login-page-theme.componens" as login-page;
 @use "./app/components/sidebar/sidebar-theme.component" as sidebar;
 // Plus imports for other components in your app.
 @import "variables";
@@ -214,52 +215,54 @@ $dark-pink-theme: mat.define-dark-theme(
 );
 
 
-  @include mat.all-component-themes($default-theme);
-  @include tile.theme($default-theme);
-  @include main-page.theme($default-theme);
-  .green-theme {
-    @include mat.all-component-colors($light-green-theme);
-    @include tile.color($light-green-theme);
-  }
+@include mat.all-component-themes($default-theme);
+@include login-page.theme($default-theme);
+@include tile.theme($default-theme);
+@include main-page.theme($default-theme);
+.green-theme {
+  @include mat.all-component-colors($light-green-theme);
+  @include tile.color($light-green-theme);
+}
 
-  .yellow-theme {
-    @include mat.all-component-colors($light-yellow-theme);
-    @include tile.color($light-yellow-theme);
-  }
+.yellow-theme {
+  @include mat.all-component-colors($light-yellow-theme);
+  @include tile.color($light-yellow-theme);
+}
 
-  .orange-theme {
-    @include mat.all-component-colors($light-orange-theme);
-    @include tile.color($light-orange-theme);
-  }
+.orange-theme {
+  @include mat.all-component-colors($light-orange-theme);
+  @include tile.color($light-orange-theme);
+}
 
-  .red-theme {
-    @include mat.all-component-colors($light-red-theme);
-    @include tile.color($light-red-theme);
-  }
+.red-theme {
+  @include mat.all-component-colors($light-red-theme);
+  @include tile.color($light-red-theme);
+}
 
-  .blue-theme {
-    @include mat.all-component-colors($light-blue-theme);
-    @include tile.color($light-blue-theme);
-  }
+.blue-theme {
+  @include mat.all-component-colors($light-blue-theme);
+  @include tile.color($light-blue-theme);
+}
 
-  .violet-theme {
-    @include mat.all-component-colors($light-violet-theme);
-    @include tile.color($light-violet-theme);
-    @include sidebar.color($light-violet-theme);
-  }
+.violet-theme {
+  @include mat.all-component-colors($light-violet-theme);
+  @include tile.color($light-violet-theme);
+  @include sidebar.color($light-violet-theme);
+}
 
-  .pink-theme {
-    @include mat.all-component-colors($light-pink-theme);
-    @include tile.color($light-pink-theme);
-    @include main-page.color($light-pink-theme);
-  }
-
+.pink-theme {
+  @include mat.all-component-colors($light-pink-theme);
+  @include tile.color($light-pink-theme);
+  @include main-page.color($light-pink-theme);
+}
 
 
 .dark-mode {
   @include mat.all-component-colors($default-dark-theme);
   @include tile.color($default-dark-theme);
   @include main-page.color($default-dark-theme);
+  @include login-page.color($default-dark-theme);
+
   .green-theme {
     @include mat.all-component-colors($dark-green-theme);
     @include tile.color($dark-green-theme);

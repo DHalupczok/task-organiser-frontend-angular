@@ -17,11 +17,15 @@ import { typeReducer } from './app/state/types/type.reducer';
 import * as typeEffects from './app/state/types/type.effects';
 import { userReducer } from './app/state/users/user.reducer';
 import * as userEffects from './app/state/users/user.effects';
+import { LoginPageComponent } from './app/pages/login-page/login-page.component';
+import { LogoutPageComponent } from './app/pages/logout-page/logout-page.component';
 
 bootstrapApplication(AppComponent, {
   providers: [
     provideRouter([
       { path: '', component: MainPageComponent },
+      { path: 'login', component: LoginPageComponent },
+      { path: 'logout', component: LogoutPageComponent },
       { path: '**', redirectTo: '' },
     ]),
     importProvidersFrom([BrowserAnimationsModule]),

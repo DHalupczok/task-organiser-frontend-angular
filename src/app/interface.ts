@@ -37,3 +37,13 @@ export interface IUser {
 }
 
 export type TStatus = 'pending' | 'loading' | 'error' | 'success';
+
+export interface ILoginCredentials {
+  email: string;
+  password: string;
+}
+
+export interface ITokenResponse {
+  accessToken: string;
+  refreshToken: string;
+}

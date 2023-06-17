@@ -47,3 +47,11 @@ export interface ITokenResponse {
   accessToken: string;
   refreshToken: string;
 }
+export interface IDecodedToken {
+  id: string;
+  email: string;
+  name: string;
+  surname: string;
+  iat: number;
+  exp: number;
+}

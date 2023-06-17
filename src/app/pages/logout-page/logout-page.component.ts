@@ -6,8 +6,6 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './logout-page.component.html',
-  styleUrls: ['./logout-page.component.scss']
+  styleUrls: ['./logout-page.component.scss'],
 })
-export class LogoutPageComponent {
-
-}
+export class LogoutPageComponent {}

@@ -6,10 +6,10 @@ import { environment } from '../../../environments/environment';
 @Injectable({
   providedIn: 'root',
 })
-export class AuthServiceService {
+export class AuthService {
   constructor(private http: HttpClient) {}
 
-  login$(loginCredentials: ILoginCredentials) {
+  logIn$(loginCredentials: ILoginCredentials) {
     return this.http.post<ITokenResponse>(
       `${environment.apiURL}/security/login`,
       loginCredentials

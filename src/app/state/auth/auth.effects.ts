@@ -7,7 +7,8 @@ import {
   refreshToken,
   refreshTokenSuccess,
 } from './auth.actions';
-import { map, switchMap } from 'rxjs';
+import { map, switchMap, tap } from 'rxjs';
+import { Router } from '@angular/router';
 
 export const logIn$ = createEffect(
   (action$ = inject(Actions), authService = inject(AuthService)) => {
@@ -28,4 +29,14 @@ export const refreshToken$ = createEffect(
     );
   },
   { functional: true }
+);
+export const redirectAfterLogin = createEffect(
+  (action$ = inject(Actions), router = inject(Router)) => {
+    return action$.pipe(
+      ofType(logInSuccess),
+      tap(tokens => console.warn(tokens)),
+      tap(() => router.navigate(['/']))
+    );
+  },
+  { functional: true, dispatch: false }
 );

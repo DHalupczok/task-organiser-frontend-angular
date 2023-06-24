@@ -32,7 +32,5 @@ export class LoginPageComponent {
         loginCredentials: { email: this.email, password: this.password },
       })
     );
-    //for testing purposes
-    this.router.navigate(['/']);
   }
 }

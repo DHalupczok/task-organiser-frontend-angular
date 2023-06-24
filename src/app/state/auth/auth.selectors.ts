@@ -16,7 +16,41 @@ export const selectRefreshToken = createSelector(
 );
 export const selectDecodedAccessToken = createSelector(
   selectAuth,
-  (state: AuthState) => jwtDecode<IDecodedToken>(state.accessToken)
+  (state: AuthState) => {
+    try {
+      return jwtDecode<IDecodedToken>(state.accessToken);
+    } catch (e) {
+      return {
+        id: '',
+        email: '',
+        name: '',
+        surname: '',
+        iat: '',
+        exp: '',
+      } as unknown as IDecodedToken;
+    }
+  }
+);
+export const selectDecodedRefreshToken = createSelector(
+  selectAuth,
+  (state: AuthState) => {
+    try {
+      return jwtDecode<IDecodedToken>(state.refreshToken);
+    } catch (e) {
+      return {
+        id: '',
+        email: '',
+        name: '',
+        surname: '',
+        iat: '',
+        exp: '',
+      } as unknown as IDecodedToken;
+    }
+  }
+);
+export const selectRefreshTokenExpirationDate = createSelector(
+  selectDecodedRefreshToken,
+  (state: IDecodedToken) => new Date(state.exp * 1000)
 );
 export const selectLoggedUserId = createSelector(
   selectDecodedAccessToken,

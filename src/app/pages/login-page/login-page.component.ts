@@ -24,9 +24,8 @@ import { Router } from '@angular/router';
 export class LoginPageComponent {
   email = '';
   password = '';
-  constructor(private store: Store, private router: Router) {}
+  constructor(private store: Store) {}
   login() {
-    console.log(this.email, this.password);
     this.store.dispatch(
       logIn({
         loginCredentials: { email: this.email, password: this.password },

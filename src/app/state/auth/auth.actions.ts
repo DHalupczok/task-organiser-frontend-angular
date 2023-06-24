@@ -19,4 +19,5 @@ export const refreshTokenSuccess = createAction(
   props<{ tokenResponse: ITokenResponse }>()
 );
 
+export const authGuardLogOut = createAction('[Auth Guard] Logout');
 export const logOut = createAction('[Main Page] Logout');

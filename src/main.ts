@@ -22,23 +22,28 @@ import { LoginPageComponent } from './app/pages/login-page/login-page.component'
 import { LogoutPageComponent } from './app/pages/logout-page/logout-page.component';
 import { authReducer } from './app/state/auth/auth.reducer';
 import { authInterceptor } from './app/http-interceptors/auth-interceptor';
+import { metaReducers } from './app/state/app.state';
+import { isLoggedIn } from './app/guards/auth.guard';
 
 bootstrapApplication(AppComponent, {
   providers: [
     provideRouter([
-      { path: '', component: MainPageComponent },
+      { path: '', component: MainPageComponent, canActivate: [isLoggedIn] },
       { path: 'login', component: LoginPageComponent },
       { path: 'logout', component: LogoutPageComponent },
       { path: '**', redirectTo: '' },
     ]),
     importProvidersFrom([BrowserAnimationsModule]),
-    provideStore({
-      projects: projectReducer,
-      tasks: taskReducer,
-      types: typeReducer,
-      users: userReducer,
-      auth: authReducer,
-    }),
+    provideStore(
+      {
+        projects: projectReducer,
+        tasks: taskReducer,
+        types: typeReducer,
+        users: userReducer,
+        auth: authReducer,
+      },
+      { metaReducers }
+    ),
     provideHttpClient(withInterceptors([authInterceptor])),
     provideEffects(
       ProjectEffects,

@@ -6,7 +6,6 @@ import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { Store } from '@ngrx/store';
 import { logIn } from '../../state/auth/auth.actions';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login-page',

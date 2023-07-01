@@ -2,7 +2,7 @@ import { CanActivateFn, Router, UrlTree } from '@angular/router';
 import { inject } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { selectRefreshTokenExpirationDate } from '../state/auth/auth.selectors';
-import { map, Observable, tap } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import { authGuardLogOut } from '../state/auth/auth.actions';
 
 export const isLoggedIn: CanActivateFn = (): Observable<boolean | UrlTree> => {

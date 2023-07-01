@@ -15,13 +15,6 @@ export const authReducer = createReducer(
   initialState,
   on(
     logInSuccess,
-    (state, { tokenResponse }): ITokenResponse => ({
-      ...state,
-      accessToken: tokenResponse.accessToken,
-      refreshToken: tokenResponse.refreshToken,
-    })
-  ),
-  on(
     refreshTokenSuccess,
     (state, { tokenResponse }): ITokenResponse => ({
       ...state,

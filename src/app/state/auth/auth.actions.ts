@@ -10,9 +10,8 @@ export const logInSuccess = createAction(
   props<{ tokenResponse: ITokenResponse }>()
 );
 
-export const refreshToken = createAction(
-  '[Auth Interceptor] Refresh Token',
-  props<{ refreshToken: string }>()
+export const refreshTokenFromAuthInterceptor = createAction(
+  '[Auth Interceptor] Refresh Token'
 );
 export const refreshTokenSuccess = createAction(
   '[Auth API] Refresh Token Success',

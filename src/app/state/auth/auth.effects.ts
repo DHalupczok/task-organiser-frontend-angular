@@ -4,11 +4,13 @@ import { AuthService } from '../../services/auth-service/auth.service';
 import {
   logIn,
   logInSuccess,
-  refreshToken,
+  refreshTokenFromAuthInterceptor,
   refreshTokenSuccess,
 } from './auth.actions';
 import { map, switchMap, tap } from 'rxjs';
 import { Router } from '@angular/router';
+import { Store } from '@ngrx/store';
+import { selectRefreshToken } from './auth.selectors';
 
 export const logIn$ = createEffect(
   (action$ = inject(Actions), authService = inject(AuthService)) => {
@@ -21,10 +23,15 @@ export const logIn$ = createEffect(
   { functional: true }
 );
 export const refreshToken$ = createEffect(
-  (action$ = inject(Actions), authService = inject(AuthService)) => {
+  (
+    action$ = inject(Actions),
+    authService = inject(AuthService),
+    store = inject(Store)
+  ) => {
     return action$.pipe(
-      ofType(refreshToken),
-      switchMap(refreshToken => authService.getNewToken$(refreshToken)),
+      ofType(refreshTokenFromAuthInterceptor),
+      switchMap(() => store.select(selectRefreshToken)),
+      switchMap(refreshToken => authService.getNewToken$({ refreshToken })),
       map(tokenResponse => refreshTokenSuccess({ tokenResponse }))
     );
   },

@@ -15,12 +15,14 @@ import {
 import { catchError, map, switchMap, of } from 'rxjs';
 
 export const fetchAllTypesByProjectId$ = createEffect(
-  (action$ = inject(Actions), typesService = inject(TypesService)) => {
+  (action$ = inject(Actions), typesService$ = inject(TypesService)) => {
     return action$.pipe(
       ofType(fetchAllTypes),
-      switchMap(({ projectId }) => typesService.getAll(projectId)),
+      switchMap(({ projectId }) => typesService$.getAll(projectId)),
       map(types => fetchAllTypesSuccess({ types })),
-      catchError(error => of({ type: typeApiFailure.type, error }))
+      catchError(error => {
+        return of({ type: typeApiFailure.type, error });
+      })
     );
   },
   { functional: true }

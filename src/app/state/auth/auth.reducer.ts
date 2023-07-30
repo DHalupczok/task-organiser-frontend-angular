@@ -1,5 +1,10 @@
 import { createReducer, on } from '@ngrx/store';
-import { logInSuccess, logOut, refreshTokenSuccess } from './auth.actions';
+import {
+  logInSuccess,
+  logOutFromAuthApi,
+  logOutFromMainPage,
+  refreshTokenSuccess,
+} from './auth.actions';
 import { ITokenResponse } from '../../interface';
 
 export interface AuthState {
@@ -23,7 +28,8 @@ export const authReducer = createReducer(
     })
   ),
   on(
-    logOut,
+    logOutFromMainPage,
+    logOutFromAuthApi,
     (state): ITokenResponse => ({ ...state, accessToken: '', refreshToken: '' })
   )
 );

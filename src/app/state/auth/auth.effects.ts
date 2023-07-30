@@ -4,6 +4,8 @@ import { AuthService } from '../../services/auth-service/auth.service';
 import {
   logIn,
   logInSuccess,
+  logOutFromAuthApi,
+  logOutFromMainPage,
   refreshTokenFromAuthInterceptor,
   refreshTokenSuccess,
 } from './auth.actions';
@@ -43,6 +45,16 @@ export const redirectAfterLogin = createEffect(
       ofType(logInSuccess),
       tap(tokens => console.warn(tokens)),
       tap(() => router.navigate(['/']))
+    );
+  },
+  { functional: true, dispatch: false }
+);
+
+export const logout$ = createEffect(
+  (actions$ = inject(Actions), router = inject(Router)) => {
+    return actions$.pipe(
+      ofType(logOutFromAuthApi, logOutFromMainPage),
+      tap(() => router.navigate(['/login']))
     );
   },
   { functional: true, dispatch: false }

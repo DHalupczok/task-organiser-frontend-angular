@@ -19,4 +19,5 @@ export const refreshTokenSuccess = createAction(
 );
 
 export const authGuardLogOut = createAction('[Auth Guard] Logout');
-export const logOut = createAction('[Main Page] Logout');
+export const logOutFromMainPage = createAction('[Main Page] Logout');
+export const logOutFromAuthApi = createAction('[Auth API] Logout');

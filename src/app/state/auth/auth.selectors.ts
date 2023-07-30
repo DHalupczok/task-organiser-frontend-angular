@@ -3,6 +3,9 @@ import { createSelector } from '@ngrx/store';
 import { AuthState } from './auth.reducer';
 import jwtDecode from 'jwt-decode';
 import { IDecodedToken } from '../../interface';
+import { createEffect } from '@ngrx/effects';
+import { environment } from '../../../environments/environment';
+import { timer } from 'rxjs';
 
 export const selectAuth = (state: AppState) => state.auth;
 
@@ -72,4 +75,14 @@ export const selectLoggedUserNameAndSurname = createSelector(
   selectLoggedUserName,
   selectLoggedUserSurname,
   (name, surname) => `${name} ${surname}`
+);
+
+export const selectLogoutTimerStartDate = createSelector(
+  selectDecodedRefreshToken,
+  (state: IDecodedToken) => {
+    console.warn(environment.logoutTimerVisibilityTime, state.exp);
+    return new Date(
+      state.exp * 1000 - environment.logoutTimerVisibilityTime * 1000
+    );
+  }
 );

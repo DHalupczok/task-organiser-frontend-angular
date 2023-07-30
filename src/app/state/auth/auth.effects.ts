@@ -7,7 +7,7 @@ import {
   refreshTokenFromAuthInterceptor,
   refreshTokenSuccess,
 } from './auth.actions';
-import { map, switchMap, tap } from 'rxjs';
+import { map, switchMap, take, tap } from 'rxjs';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { selectRefreshToken } from './auth.selectors';
@@ -30,7 +30,7 @@ export const refreshToken$ = createEffect(
   ) => {
     return action$.pipe(
       ofType(refreshTokenFromAuthInterceptor),
-      switchMap(() => store.select(selectRefreshToken)),
+      switchMap(() => store.select(selectRefreshToken).pipe(take(1))),
       switchMap(refreshToken => authService.getNewToken$({ refreshToken })),
       map(tokenResponse => refreshTokenSuccess({ tokenResponse }))
     );

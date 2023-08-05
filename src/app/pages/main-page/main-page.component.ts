@@ -5,15 +5,9 @@ import { DarkModeService } from '../../services/dark-mode.service';
 import { SidebarComponent } from '../../components/sidebar/sidebar.component';
 import { Store } from '@ngrx/store';
 import { selectAllProjects } from '../../state/projects/project.selectors';
-import {
-  selectProject,
-  fetchAllProjects,
-} from '../../state/projects/project.actions';
+import { fetchAllProjects } from '../../state/projects/project.actions';
 import { AppState } from '../../state/app.state';
-import {
-  selectLogoutTimer,
-  selectLogoutTimerStartDate,
-} from '../../state/auth/auth.selectors';
+import { selectLogoutTimerStartDate } from '../../state/auth/auth.selectors';
 import { LogoutTimerComponent } from '../../components/logout-timer/logout-timer.component';
 
 @Component({
@@ -40,7 +34,6 @@ export class MainPageComponent implements OnInit {
 
   ngOnInit() {
     this.store.dispatch(fetchAllProjects());
-    this.store.select(selectLogoutTimer).subscribe();
   }
   toggleDarkMode() {
     this.darkModeService.toggleDarkMode$.next();

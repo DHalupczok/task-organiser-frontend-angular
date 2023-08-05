@@ -1,1 +1,7 @@
-<p>logout-timer works! {{ timerValue$ | async }}</p>
+<p *ngIf="timerVisibility$ | async">
+  You are about to be logged out in {{ timerValue }}
+  <button mat-button color="primary" (click)="extendSession()">
+    Extend session
+  </button>
+  <button mat-button color="danger" (click)="logout()">Logout</button>
+</p>

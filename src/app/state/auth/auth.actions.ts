@@ -13,6 +13,9 @@ export const logInSuccess = createAction(
 export const refreshTokenFromAuthInterceptor = createAction(
   '[Auth Interceptor] Refresh Token'
 );
+export const refreshTokenFromLogoutTimer = createAction(
+  '[Logout Timer] Refresh Token'
+);
 export const refreshTokenSuccess = createAction(
   '[Auth API] Refresh Token Success',
   props<{ tokenResponse: ITokenResponse }>()
@@ -21,3 +24,4 @@ export const refreshTokenSuccess = createAction(
 export const authGuardLogOut = createAction('[Auth Guard] Logout');
 export const logOutFromMainPage = createAction('[Main Page] Logout');
 export const logOutFromAuthApi = createAction('[Auth API] Logout');
+export const logOutFromLogoutTimer = createAction('[Logout Timer] Logout');

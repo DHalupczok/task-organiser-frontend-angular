@@ -5,8 +5,10 @@ import {
   logIn,
   logInSuccess,
   logOutFromAuthApi,
+  logOutFromLogoutTimer,
   logOutFromMainPage,
   refreshTokenFromAuthInterceptor,
+  refreshTokenFromLogoutTimer,
   refreshTokenSuccess,
 } from './auth.actions';
 import { map, switchMap, take, tap } from 'rxjs';
@@ -31,7 +33,7 @@ export const refreshToken$ = createEffect(
     store = inject(Store)
   ) => {
     return action$.pipe(
-      ofType(refreshTokenFromAuthInterceptor),
+      ofType(refreshTokenFromAuthInterceptor, refreshTokenFromLogoutTimer),
       switchMap(() => store.select(selectRefreshToken).pipe(take(1))),
       switchMap(refreshToken => authService.getNewToken$({ refreshToken })),
       map(tokenResponse => refreshTokenSuccess({ tokenResponse }))
@@ -53,7 +55,7 @@ export const redirectAfterLogin = createEffect(
 export const logout$ = createEffect(
   (actions$ = inject(Actions), router = inject(Router)) => {
     return actions$.pipe(
-      ofType(logOutFromAuthApi, logOutFromMainPage),
+      ofType(logOutFromAuthApi, logOutFromMainPage, logOutFromLogoutTimer),
       tap(() => router.navigate(['/login']))
     );
   },

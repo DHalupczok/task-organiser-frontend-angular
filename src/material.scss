@@ -5,6 +5,7 @@
 @use "./app/pages/main-page/main-page-theme.component" as main-page;
 @use "./app/pages/login-page/login-page-theme.componens" as login-page;
 @use "./app/components/sidebar/sidebar-theme.component" as sidebar;
+@use "./app/components/logout-timer/logout-timer-theme.component" as logout-timer;
 // Plus imports for other components in your app.
 @import "variables";
 // Include the common styles for Angular Material. We include this here so that you only
@@ -219,6 +220,7 @@ $dark-pink-theme: mat.define-dark-theme(
 @include login-page.theme($default-theme);
 @include tile.theme($default-theme);
 @include main-page.theme($default-theme);
+@include logout-timer.theme($default-theme);
 .green-theme {
   @include mat.all-component-colors($light-green-theme);
   @include tile.color($light-green-theme);
@@ -262,6 +264,7 @@ $dark-pink-theme: mat.define-dark-theme(
   @include tile.color($default-dark-theme);
   @include main-page.color($default-dark-theme);
   @include login-page.color($default-dark-theme);
+  @include logout-timer.color($default-dark-theme);
 
   .green-theme {
     @include mat.all-component-colors($dark-green-theme);

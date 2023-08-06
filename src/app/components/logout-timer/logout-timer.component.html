@@ -1,7 +1,9 @@
-<p *ngIf="timerVisibility$ | async">
-  You are about to be logged out in {{ timerValue }}
-  <button mat-button color="primary" (click)="extendSession()">
-    Extend session
-  </button>
-  <button mat-button color="danger" (click)="logout()">Logout</button>
-</p>
+<div *ngIf="timerVisibility$ | async">
+  <p>
+    You are about to be logged out in {{ timerValue }}
+    <button mat-raised-button color="primary" (click)="extendSession()">
+      Extend session
+    </button>
+    <button mat-raised-button color="warn" (click)="logout()">Logout</button>
+  </p>
+</div>

@@ -17,13 +17,17 @@ import {
   logOutFromLogoutTimer,
   refreshTokenFromLogoutTimer,
 } from '../../state/auth/auth.actions';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-logout-timer',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, MatButtonModule],
   templateUrl: './logout-timer.component.html',
-  styleUrls: ['./logout-timer.component.scss'],
+  styleUrls: [
+    './logout-timer.component.scss',
+    './_logout-timer-theme.component.scss',
+  ],
 })
 export class LogoutTimerComponent implements OnInit, OnDestroy {
   timerVisibility$ = new Subject<boolean>();
@@ -57,9 +61,9 @@ export class LogoutTimerComponent implements OnInit, OnDestroy {
   private subscriptions: Subscription[] = [];
 
   ngOnInit() {
-    this.timerValue$
-      .pipe()
-      .subscribe(timerValue => (this.timerValue = timerValue));
+    this.subscriptions.push(
+      this.timerValue$.subscribe(timerValue => (this.timerValue = timerValue))
+    );
   }
   ngOnDestroy() {
     this.subscriptions.forEach(sub => sub.unsubscribe());

@@ -1,0 +1,22 @@
+.user-container {
+  display: flex;
+  justify-content: space-around;
+  margin: 1rem;
+  width: 80%;
+  .user-container--text {
+   .user-container--name {
+    font-weight: bold;
+   }
+    .user-container--settings {
+      font-size: 0.8rem
+    }
+  }
+  .user-container--image {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    img {
+      border-radius: 50%;
+    }
+  }
+}

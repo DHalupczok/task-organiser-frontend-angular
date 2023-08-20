@@ -9,6 +9,7 @@ import { fetchAllProjects } from '../../state/projects/project.actions';
 import { AppState } from '../../state/app.state';
 import { selectLogoutTimerStartDate } from '../../state/auth/auth.selectors';
 import { LogoutTimerComponent } from '../../components/logout-timer/logout-timer.component';
+import { UserAvatarComponent } from '../../components/user-avatar/user-avatar.component';
 
 @Component({
   selector: 'app-main-page',
@@ -18,6 +19,7 @@ import { LogoutTimerComponent } from '../../components/logout-timer/logout-timer
     MatIconModule,
     SidebarComponent,
     LogoutTimerComponent,
+    UserAvatarComponent,
   ],
   templateUrl: './main-page.component.html',
   styleUrls: ['./main-page.component.scss'],

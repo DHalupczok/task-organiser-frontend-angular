@@ -3,9 +3,7 @@ import { createSelector } from '@ngrx/store';
 import { AuthState } from './auth.reducer';
 import jwtDecode from 'jwt-decode';
 import { IDecodedToken } from '../../interface';
-import { createEffect } from '@ngrx/effects';
 import { environment } from '../../../environments/environment';
-import { timer } from 'rxjs';
 
 export const selectAuth = (state: AppState) => state.auth;
 

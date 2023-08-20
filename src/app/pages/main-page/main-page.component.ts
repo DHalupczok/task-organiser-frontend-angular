@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
 import { DarkModeService } from '../../services/dark-mode.service';
@@ -27,12 +27,11 @@ import { UserAvatarComponent } from '../../components/user-avatar/user-avatar.co
   ],
   templateUrl: './main-page.component.html',
   styleUrls: ['./main-page.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MainPageComponent implements OnInit {
   title = 'task-organiser-frontend-angular';
-  sidebarOpened = true;
   projects$ = this.store.select(selectAllProjects);
-  timerValue$ = this.store.select(selectLogoutTimerStartDate);
   userNameSurname$ = this.store.select(selectLoggedUserNameAndSurname);
   userImageName$ = this.store.select(selectLoggedUserImageName);
   constructor(

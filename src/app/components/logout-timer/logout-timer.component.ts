@@ -1,17 +1,22 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  OnDestroy,
+  OnInit,
+} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Store } from '@ngrx/store';
 import { selectLogoutTimerStartDate } from '../../state/auth/auth.selectors';
 import { AppState } from '../../state/app.state';
 import {
+  iif,
   map,
   of,
   Subject,
+  Subscription,
   switchMap,
   tap,
   timer,
-  iif,
-  Subscription,
 } from 'rxjs';
 import {
   logOutFromLogoutTimer,
@@ -28,6 +33,7 @@ import { MatButtonModule } from '@angular/material/button';
     './logout-timer.component.scss',
     './_logout-timer-theme.component.scss',
   ],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LogoutTimerComponent implements OnInit, OnDestroy {
   timerVisibility$ = new Subject<boolean>();

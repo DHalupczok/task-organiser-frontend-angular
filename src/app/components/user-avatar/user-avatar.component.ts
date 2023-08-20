@@ -1,4 +1,10 @@
-import { Component, computed, Input, signal } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  computed,
+  Input,
+  signal,
+} from '@angular/core';
 import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { environment } from '../../../environments/environment';
 
@@ -8,6 +14,7 @@ import { environment } from '../../../environments/environment';
   imports: [CommonModule, NgOptimizedImage],
   templateUrl: './user-avatar.component.html',
   styleUrls: ['./user-avatar.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class UserAvatarComponent {
   @Input() userNameAndSurname: string | null = '';

@@ -1,12 +1,9 @@
 <div class="user-container border-rounded">
   <div class="user-container--text">
-    <p class="user-container--name">Anna Hare</p>
+    <p class="user-container--name">{{ userNameAndSurname }}</p>
     <p class="user-container--settings">Settings</p>
   </div>
   <div class="user-container--image">
-    <img
-      ngSrc="http://localhost:5099/public/test.webp"
-      [height]="50"
-      [width]="50" />
+    <img [ngSrc]="userImageUrl()" [height]="50" [width]="50" alt="user logo" />
   </div>
 </div>

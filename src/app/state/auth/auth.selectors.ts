@@ -28,6 +28,7 @@ export const selectDecodedAccessToken = createSelector(
         email: '',
         name: '',
         surname: '',
+        imageName: '',
         iat: '',
         exp: '',
       } as unknown as IDecodedToken;
@@ -45,6 +46,7 @@ export const selectDecodedRefreshToken = createSelector(
         email: '',
         name: '',
         surname: '',
+        imageName: '',
         iat: '',
         exp: '',
       } as unknown as IDecodedToken;
@@ -75,6 +77,11 @@ export const selectLoggedUserNameAndSurname = createSelector(
   selectLoggedUserName,
   selectLoggedUserSurname,
   (name, surname) => `${name} ${surname}`
+);
+
+export const selectLoggedUserImageName = createSelector(
+  selectDecodedAccessToken,
+  (state: IDecodedToken) => state.imageName
 );
 
 export const selectLogoutTimerStartDate = createSelector(

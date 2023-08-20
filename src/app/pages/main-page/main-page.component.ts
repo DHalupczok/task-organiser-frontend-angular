@@ -7,7 +7,11 @@ import { Store } from '@ngrx/store';
 import { selectAllProjects } from '../../state/projects/project.selectors';
 import { fetchAllProjects } from '../../state/projects/project.actions';
 import { AppState } from '../../state/app.state';
-import { selectLogoutTimerStartDate } from '../../state/auth/auth.selectors';
+import {
+  selectLoggedUserImageName,
+  selectLoggedUserNameAndSurname,
+  selectLogoutTimerStartDate,
+} from '../../state/auth/auth.selectors';
 import { LogoutTimerComponent } from '../../components/logout-timer/logout-timer.component';
 import { UserAvatarComponent } from '../../components/user-avatar/user-avatar.component';
 
@@ -29,6 +33,8 @@ export class MainPageComponent implements OnInit {
   sidebarOpened = true;
   projects$ = this.store.select(selectAllProjects);
   timerValue$ = this.store.select(selectLogoutTimerStartDate);
+  userNameSurname$ = this.store.select(selectLoggedUserNameAndSurname);
+  userImageName$ = this.store.select(selectLoggedUserImageName);
   constructor(
     private store: Store<AppState>,
     private darkModeService: DarkModeService

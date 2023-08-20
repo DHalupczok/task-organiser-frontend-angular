@@ -7,7 +7,9 @@
     <div class="main__tile">
       <div class="main__space main__space-left"></div>
       <div class="main__space main__space-right">
-        <app-user-avatar></app-user-avatar>
+        <app-user-avatar
+          [userNameAndSurname]="userNameSurname$ | async"
+          [userImageName]="userImageName$ | async"></app-user-avatar>
       </div>
     </div>
     <div class="main__rectangle z-index-2"></div>

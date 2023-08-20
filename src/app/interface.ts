@@ -34,6 +34,7 @@ export interface IUser {
   name: string;
   surname: string;
   password: string;
+  imageName: string;
 }
 
 export type TStatus = 'pending' | 'loading' | 'error' | 'success';
@@ -52,6 +53,7 @@ export interface IDecodedToken {
   email: string;
   name: string;
   surname: string;
+  imageName: string;
   iat: number;
   exp: number;
 }

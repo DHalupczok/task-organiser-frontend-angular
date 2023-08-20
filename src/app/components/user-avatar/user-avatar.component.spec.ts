@@ -8,7 +8,7 @@ describe('UserAvatarComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [UserAvatarComponent]
+      imports: [UserAvatarComponent],
     });
     fixture = TestBed.createComponent(UserAvatarComponent);
     component = fixture.componentInstance;

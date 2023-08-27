@@ -1,7 +1,7 @@
 // in the main.ts file
 import { bootstrapApplication } from '@angular/platform-browser';
 import { AppComponent } from './app/app.component';
-import { provideRouter } from '@angular/router';
+import { provideRouter, withPreloading } from '@angular/router';
 import { importProvidersFrom, isDevMode } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MainPageComponent } from './app/pages/main-page/main-page.component';
@@ -24,15 +24,27 @@ import { authReducer } from './app/state/auth/auth.reducer';
 import { authInterceptor } from './app/http-interceptors/auth-interceptor';
 import { metaReducers } from './app/state/app.state';
 import { isLoggedIn } from './app/guards/auth.guard';
+import { CustomPreloadingStrategyService } from './app/services/custom-preloading-strategy.service';
 
 bootstrapApplication(AppComponent, {
   providers: [
-    provideRouter([
-      { path: '', component: MainPageComponent, canActivate: [isLoggedIn] },
-      { path: 'login', component: LoginPageComponent },
-      { path: 'logout', component: LogoutPageComponent },
-      { path: '**', redirectTo: '' },
-    ]),
+    provideRouter(
+      [
+        {
+          path: '',
+          loadComponent: () =>
+            import('./app/pages/main-page/main-page.component').then(
+              c => c.MainPageComponent
+            ),
+          data: { preloadTime: 0 },
+          canActivate: [isLoggedIn],
+        },
+        { path: 'login', component: LoginPageComponent },
+        { path: 'logout', component: LogoutPageComponent },
+        { path: '**', redirectTo: '' },
+      ],
+      withPreloading(CustomPreloadingStrategyService)
+    ),
     importProvidersFrom([BrowserAnimationsModule]),
     provideStore(
       {

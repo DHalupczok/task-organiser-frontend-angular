@@ -10,7 +10,6 @@ import { AppState } from '../../state/app.state';
 import {
   selectLoggedUserImageName,
   selectLoggedUserNameAndSurname,
-  selectLogoutTimerStartDate,
 } from '../../state/auth/auth.selectors';
 import { LogoutTimerComponent } from '../../components/logout-timer/logout-timer.component';
 import { UserAvatarComponent } from '../../components/user-avatar/user-avatar.component';

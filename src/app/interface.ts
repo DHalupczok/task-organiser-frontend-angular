@@ -20,6 +20,7 @@ export interface ITask {
   stopDate: Date;
   repeatability: ERepeatability;
   content: string;
+  isDone: boolean;
 }
 
 export interface IType {

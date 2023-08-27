@@ -1,6 +1,7 @@
-import { ITask, TStatus } from '../../interface';
+import { ERepeatability, ITask, TStatus } from '../../interface';
 import { createReducer, on } from '@ngrx/store';
 import {
+  changeRepeatability,
   deleteTaskSuccess,
   fetchAllTasks,
   fetchAllTasksSuccess,
@@ -11,12 +12,14 @@ export interface TaskState {
   tasks: ITask[];
   error: string;
   status: TStatus;
+  selectedRepeatability: ERepeatability;
 }
 
 export const initialState: TaskState = {
   tasks: [],
   error: '',
   status: 'pending',
+  selectedRepeatability: 1,
 };
 
 export const taskReducer = createReducer(
@@ -45,5 +48,9 @@ export const taskReducer = createReducer(
       ...state,
       tasks: state.tasks.filter(task => task.id !== id),
     })
-  )
+  ),
+  on(changeRepeatability, (state, { selectedRepeatability }) => ({
+    ...state,
+    selectedRepeatability,
+  }))
 );

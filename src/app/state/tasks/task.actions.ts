@@ -1,5 +1,5 @@
 import { createAction, props } from '@ngrx/store';
-import { ITask } from '../../interface';
+import { ERepeatability, ITask } from '../../interface';
 
 export const fetchAllTasks = createAction(
   '[Main Page] Fetch All Tasks ',
@@ -32,4 +32,9 @@ export const deleteTask = createAction(
 export const deleteTaskSuccess = createAction(
   '[Task API] Delete Task Success',
   props<{ id: string }>()
+);
+
+export const changeRepeatability = createAction(
+  '[Main Page] Change Selected Repeatability',
+  props<{ selectedRepeatability: ERepeatability }>()
 );

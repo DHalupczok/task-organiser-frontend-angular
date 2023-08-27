@@ -4,7 +4,6 @@ import { AppComponent } from './app/app.component';
 import { provideRouter, withPreloading } from '@angular/router';
 import { importProvidersFrom, isDevMode } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MainPageComponent } from './app/pages/main-page/main-page.component';
 import { provideStore } from '@ngrx/store';
 import { provideHttpClient, withInterceptors } from '@angular/common/http';
 import { provideEffects } from '@ngrx/effects';

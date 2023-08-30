@@ -31,9 +31,17 @@ export const selectTasksToBeDoneByRepeatability = createSelector(
   selectAllTasksByRepeatability,
   tasks => tasks.filter(task => !task.isDone)
 );
+export const selectTasksToBeDoneQuantityByRepeatability = createSelector(
+  selectTasksToBeDoneByRepeatability,
+  tasks => tasks.length
+);
 export const selectTasksDoneByRepeatability = createSelector(
   selectAllTasksByRepeatability,
   tasks => tasks.filter(task => task.isDone)
+);
+export const selectTasksDoneQuantityByRepeatability = createSelector(
+  selectTasksDoneByRepeatability,
+  tasks => tasks.length
 );
 
 export const selectAllUrgentTasks = createSelector(selectAllTasks, tasks => {

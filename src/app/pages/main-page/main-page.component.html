@@ -5,7 +5,21 @@
     [projects]="(projects$ | async) || []"></app-sidebar>
   <div class="main__content">
     <div class="main__tile">
-      <div class="main__space main__space-left"></div>
+      <div class="main__space main__space-left">
+        <div class="main__space-left--title">Tasks</div>
+        <div class="main__to-do-tiles-container">
+          <app-tile
+            class="yellow-theme"
+            [mainContentText]="toDoTask$ | async"
+            mainContentClassList="text-center text-bold"
+            subContentText="To do"></app-tile>
+          <app-tile
+            class="green-theme"
+            [mainContentText]="doneTask$ | async"
+            mainContentClassList="text-center text-bold"
+            subContentText="Done"></app-tile>
+        </div>
+      </div>
       <div class="main__space main__space-right">
         <app-user-avatar
           [userNameAndSurname]="userNameSurname$ | async"

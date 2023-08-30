@@ -10,10 +10,10 @@ import { CommonModule } from '@angular/common';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TileComponent {
-  @Input() mainContentText = '';
+  @Input() mainContentText: string | null = '';
   @Input() mainContentClassList: string | string[] = '';
-  @Input() subContentText = '';
+  @Input() subContentText: string | null = '';
   @Input() subContentClassList: string | string[] = '';
-  @Input() signatureText = '';
+  @Input() signatureText: string | null = '';
   @Input() signatureClassList: string | string[] = '';
 }

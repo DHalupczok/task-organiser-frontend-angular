@@ -7,6 +7,9 @@
   $accent-palette: map.get($color-config, 'accent');
   .tile {
     background-color: mat.get-color-from-palette($primary-palette, 300);
+    .tile-main__content, .tile-sub__content, .tile-signature__content {
+      background-color: mat.get-color-from-palette($primary-palette, 300)!important;
+    }
   }
 }
 

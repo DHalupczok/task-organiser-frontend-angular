@@ -13,6 +13,13 @@ import {
 } from '../../state/auth/auth.selectors';
 import { LogoutTimerComponent } from '../../components/logout-timer/logout-timer.component';
 import { UserAvatarComponent } from '../../components/user-avatar/user-avatar.component';
+import {
+  selectTasksDoneQuantityByRepeatability,
+  selectTasksToBeDoneQuantityByRepeatability,
+} from '../../state/tasks/task.selectors';
+import { TileComponent } from '../../components/shared/tile/tile.component';
+import { map } from 'rxjs';
+import { fetchAllTasks } from '../../state/tasks/task.actions';
 
 @Component({
   selector: 'app-main-page',
@@ -23,6 +30,7 @@ import { UserAvatarComponent } from '../../components/user-avatar/user-avatar.co
     SidebarComponent,
     LogoutTimerComponent,
     UserAvatarComponent,
+    TileComponent,
   ],
   templateUrl: './main-page.component.html',
   styleUrls: ['./main-page.component.scss'],
@@ -33,6 +41,12 @@ export class MainPageComponent implements OnInit {
   projects$ = this.store.select(selectAllProjects);
   userNameSurname$ = this.store.select(selectLoggedUserNameAndSurname);
   userImageName$ = this.store.select(selectLoggedUserImageName);
+  toDoTask$ = this.store
+    .select(selectTasksToBeDoneQuantityByRepeatability)
+    .pipe(map(num => num.toString()));
+  doneTask$ = this.store
+    .select(selectTasksDoneQuantityByRepeatability)
+    .pipe(map(num => num.toString()));
   constructor(
     private store: Store<AppState>,
     private darkModeService: DarkModeService
@@ -40,6 +54,7 @@ export class MainPageComponent implements OnInit {
 
   ngOnInit() {
     this.store.dispatch(fetchAllProjects());
+    this.store.dispatch(fetchAllTasks({ projectId: '1' }));
   }
   toggleDarkMode() {
     this.darkModeService.toggleDarkMode$.next();

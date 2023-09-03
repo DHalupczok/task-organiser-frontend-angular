@@ -41,12 +41,8 @@ export class MainPageComponent implements OnInit {
   projects$ = this.store.select(selectAllProjects);
   userNameSurname$ = this.store.select(selectLoggedUserNameAndSurname);
   userImageName$ = this.store.select(selectLoggedUserImageName);
-  toDoTask$ = this.store
-    .select(selectTasksToBeDoneQuantityByRepeatability)
-    .pipe(map(num => num.toString()));
-  doneTask$ = this.store
-    .select(selectTasksDoneQuantityByRepeatability)
-    .pipe(map(num => num.toString()));
+  toDoTask$ = this.store.select(selectTasksToBeDoneQuantityByRepeatability);
+  doneTask$ = this.store.select(selectTasksDoneQuantityByRepeatability);
   constructor(
     private store: Store<AppState>,
     private darkModeService: DarkModeService

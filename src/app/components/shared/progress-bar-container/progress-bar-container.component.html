@@ -1,0 +1,11 @@
+<div class="custom-progress-bar" *ngIf="value">
+  <div class="custom-progress-bar--label-container">
+    <div>{{ label }}</div>
+    <div>{{ value }}{{ unit }}</div>
+  </div>
+  <mat-progress-bar
+    mode="determinate"
+    [value]="value"
+    [color]="color || 'primary'"
+    [mode]="mode || 'determinate'"></mat-progress-bar>
+</div>

@@ -6,6 +6,7 @@
 @use "./app/pages/login-page/login-page-theme.componens" as login-page;
 @use "./app/components/sidebar/sidebar-theme.component" as sidebar;
 @use "./app/components/logout-timer/logout-timer-theme.component" as logout-timer;
+@use "./app/components/shared/progress-bar-container/_progress-bar-container-theme.component" as progress-bar-container;
 // Plus imports for other components in your app.
 @import "variables";
 // Include the common styles for Angular Material. We include this here so that you only
@@ -221,9 +222,11 @@ $dark-pink-theme: mat.define-dark-theme(
 @include tile.theme($default-theme);
 @include main-page.theme($default-theme);
 @include logout-timer.theme($default-theme);
+@include progress-bar-container.theme($default-theme);
 .green-theme {
   @include mat.all-component-colors($light-green-theme);
   @include tile.color($light-green-theme);
+  @include progress-bar-container.theme($light-green-theme);
 }
 
 .yellow-theme {
@@ -269,6 +272,7 @@ $dark-pink-theme: mat.define-dark-theme(
   .green-theme {
     @include mat.all-component-colors($dark-green-theme);
     @include tile.color($dark-green-theme);
+    @include progress-bar-container.color($dark-green-theme);
   }
 
   .yellow-theme {

@@ -44,6 +44,14 @@ export const selectTasksDoneQuantityByRepeatability = createSelector(
   tasks => tasks.length.toString()
 );
 
+export const selectProgress = createSelector(
+  selectAllTasksByRepeatability,
+  selectTasksDoneByRepeatability,
+  (allTasks, doneTasks) => {
+    return (doneTasks.length * 100) / allTasks.length;
+  }
+);
+
 export const selectAllUrgentTasks = createSelector(selectAllTasks, tasks => {
   const tomorrow = new Date(new Date().valueOf() + 1000 * 60 * 60 * 24);
   const tomorrowMidnight = new Date(

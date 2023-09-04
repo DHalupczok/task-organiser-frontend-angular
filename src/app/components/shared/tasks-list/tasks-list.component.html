@@ -1,0 +1,8 @@
+<div class="tasks--container">
+  <div class="tile--container">
+    <app-tile
+      *ngFor="let task of tasks"
+      [mainContentText]="task.title"
+      [subContentText]="task.content"></app-tile>
+  </div>
+</div>

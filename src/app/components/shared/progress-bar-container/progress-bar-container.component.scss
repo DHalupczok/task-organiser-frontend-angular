@@ -1,0 +1,12 @@
+div.custom-progress-bar {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+
+  div.custom-progress-bar--label-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 0.1rem;
+  }
+}

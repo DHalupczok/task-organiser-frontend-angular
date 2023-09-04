@@ -24,6 +24,15 @@
         <app-user-avatar
           [userNameAndSurname]="userNameSurname$ | async"
           [userImageName]="userImageName$ | async"></app-user-avatar>
+        <app-progress-bar-container
+          label="Your goal"
+          class="green-theme"
+          [value]="progres$ | async"
+          unit="%"></app-progress-bar-container>
+        <div class="main__space-hurry-up">
+          <div>Hurry up</div>
+          <app-tasks-list [tasks]="(hurryUp$ | async) || []"></app-tasks-list>
+        </div>
       </div>
     </div>
     <div class="main__rectangle z-index-2"></div>

@@ -1,0 +1,16 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  .tasks--container {
+    overflow: auto;
+    flex: 1 1 auto;
+
+    .tile--container {
+      margin-top: 0.25rem;
+      margin-bottom: 0.25rem;
+    }
+  }
+}
+
+

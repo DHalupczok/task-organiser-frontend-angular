@@ -66,3 +66,98 @@
     }
   }
 }
+
+.custom-scrollbar {
+  /* Track */
+  ::-webkit-scrollbar-track {
+    width: 2px;
+    //background: transparent;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    //width: 10px;
+    //background: deepskyblue;
+    border-radius: 10px;
+    height: 2cm;
+  }
+
+  /* Handle on hover */
+  //::-webkit-scrollbar-thumb:hover {
+  //  background: greenyellow;
+  //}
+
+  //::-webkit-scrollbar-track-piece {
+  //  background-color: saddlebrown;
+  //  width: 5px;
+  //}
+
+  /* width */
+  ::-webkit-scrollbar {
+    width: 10px;
+    //background-color: yellow;
+    border-radius: 10px;
+  }
+
+  ///* Kolor tła paska przewijania */
+  //::-webkit-scrollbar {
+  //  width: 10px; /* Szerokość paska przewijania */
+  //  background-color: yellow; /* Kolor tła paska przewijania */
+  //  border-radius: 10px;
+  //
+  //}
+  //
+  ///* Kolor i zaokrąglenie thumba paska przewijania */
+  //::-webkit-scrollbar-thumb {
+  //  background-color: yellow; /* Kolor thumba */
+  //  border-radius: 10px; /* Zaokrąglenie rogów thumba */
+  //  height: 2cm; /* Wysokość thumba */
+  //}
+  //
+  ///* Kolor i szerokość tracka paska przewijania */
+  //::-webkit-scrollbar-track {
+  //  background-color: transparent; /* Kolor tła tracka */
+  //  border-radius: 10px;
+  //}
+  //
+  ///* Wąska linia tracka */
+  //::-webkit-scrollbar-track-piece {
+  //  background-color: violet; /* Kolor tła wąskiej linii tracka */
+  //  width: 2px; /* Szerokość wąskiej linii tracka */
+  //  //border-radius: 10px;
+  //}
+
+  ///* Kolor tła paska przewijania */
+  //::-webkit-scrollbar {
+  //  width: 10px; /* Szerokość paska przewijania */
+  //  background-color: yellow; /* Kolor tła paska przewijania */
+  //}
+  //
+  ///* Kolor i zaokrąglenie thumba paska przewijania */
+  //::-webkit-scrollbar-thumb {
+  //  background-color: yellow; /* Kolor thumba */
+  //  border-radius: 10px; /* Zaokrąglenie rogów thumba */
+  //  height: 2cm; /* Wysokość thumba */
+  //}
+  //
+  ///* Linia tracka za pomocą pseudo-elementu ::after */
+  //::-webkit-scrollbar-track {
+  //  background-color: transparent; /* Kolor tła tracka */
+  //  position: relative;
+  //}
+  //
+  //::-webkit-scrollbar-track::after {
+  //  content: '';
+  //  background-color: pink; /* Kolor tła linii tracka */
+  //  width: 2px; /* Szerokość linii tracka */
+  //  position: absolute;
+  //  top: 0;
+  //  bottom: 0;
+  //  left: 4px; /* Odległość od lewej strony */
+  //  border-radius: 10px; /* Zaokrąglenie rogów linii tracka */
+  //}
+
+
+
+}
+

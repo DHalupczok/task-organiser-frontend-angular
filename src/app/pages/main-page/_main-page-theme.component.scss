@@ -17,6 +17,25 @@
       background-color: mat.get-color-from-palette($primary-palette, 'text');
     }
   }
+
+
+  .custom-scrollbar {
+    /* Track */
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+      background: mat.get-color-from-palette($primary-palette, 'default');
+    }
+
+
+    /* width */
+    ::-webkit-scrollbar {
+      background: mat.get-color-from-palette($accent-palette, 'default');
+    }
+  }
 }
 
 @mixin typography($theme) {
